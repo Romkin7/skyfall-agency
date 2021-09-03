@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_linkbuttons",
+  "info": {
+    "name": "linkbutton",
+    "icon": "arrow-alt-circle-right"
+  },
+  "options": {},
+  "attributes": {
+    "textcontent": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

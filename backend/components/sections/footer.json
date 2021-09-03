@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_sections_footers",
+  "info": {
+    "name": "Footer",
+    "icon": "info",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "linkbutton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.linkbutton"
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "sosiallink": {
+      "model": "sosiallink"
+    }
+  }
+}

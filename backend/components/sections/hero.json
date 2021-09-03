@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_decoration_heroes",
+  "info": {
+    "name": "Hero",
+    "icon": "address-card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.linkbutton",
+      "required": false
+    }
+  }
+}
