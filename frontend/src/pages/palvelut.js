@@ -1,39 +1,36 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import Layout from "../components/Layout";
+import Hero from "../components/Hero";
 import ServicesComponent from "../components/Services";
+import PricesComponent from "../components/Prices";
 import "../assets/sass/main.scss";
 
-const IndexPage = () => {
+const ServicePage = () => {
   const data = useStaticQuery(query);
 
   return (
     <Layout seo={data.strapiServicepage.Seo}>
-      <section className="hero">
+      <Hero
+        background={data.strapiServicepage.Hero.background}
+        title={data.strapiServicepage.Hero.title}
+      />
+      <section className="services my-5">
         <div className="container">
-          <div className="row">
-            <div className="col-10 col-md-10">
-              <h1>{data.strapiServicepage.Hero.title}</h1>
+          <div className="row d-flex justify-content-center">
+            <div className="col-12">
+              <h2 className="my-5">{data.strapiServicepage.title}</h2>
+              <ServicesComponent services={data.allStrapiService.edges} />
             </div>
           </div>
         </div>
       </section>
-      <section className="services">
-        <div className="container">
-          <div className="row">
-            <div className="col-10 col-md-10">
-            <h2>{data.strapiServicepage.title}</h2>
-            <ServicesComponent services={data.allStrapiService.edges} />
-            <div className="col-10 col-md-10"></div>
-          </div>
-        </div>
-      </section>
-      <section className="prices">
+      <section className="prices my-5">
         <div className="container">
           <div className="row d-flex justify-content-center">
-            <div className="col-10 col-md-10">
-            <h2>{data.strapiServicepage.pricetitle}</h2>
-            <ServicesComponent prices={data.allStrapPrice.edges} />
+            <div className="col-12">
+              <h2 className="my-5">{data.strapiServicepage.pricetitle}</h2>
+              <PricesComponent prices={data.allStrapiPrice.edges} />
             </div>
           </div>
         </div>
@@ -47,6 +44,7 @@ const query = graphql`
     strapiServicepage {
       Hero {
         title
+        background
       }
       title
       pricetitle
@@ -54,11 +52,6 @@ const query = graphql`
       Seo {
         metaTitle
         metaDescription
-        shareImage {
-          localFile {
-            publicURL
-          }
-        }
       }
     }
     allStrapiService {
@@ -68,10 +61,10 @@ const query = graphql`
           slug
           title
           description
-          cover {
+          image {
             localFile {
               childImageSharp {
-                gatsbyImageData(width: 800, height: 500)
+                gatsbyImageData(width: 500, height: 500)
               }
             }
           }
@@ -86,7 +79,7 @@ const query = graphql`
           title
           content
           price
-          cover {
+          image {
             localFile {
               childImageSharp {
                 gatsbyImageData(width: 800, height: 500)
@@ -99,4 +92,4 @@ const query = graphql`
   }
 `;
 
-export default IndexPage;
+export default ServicePage;

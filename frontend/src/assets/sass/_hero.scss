@@ -1,0 +1,20 @@
+.hero {
+  background-position: 20% 95%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &--title {
+    font-size: calc((2.8 - 1) * 1.2vw + 1rem) !important;
+    line-height: 1.2992;
+    white-space: pre-wrap;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 0em;
+    text-transform: none;
+    text-align: center;
+    color: $white;
+  }
+}

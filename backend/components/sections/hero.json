@@ -19,6 +19,10 @@
       "repeatable": false,
       "component": "shared.linkbutton",
       "required": false
+    },
+    "background": {
+      "type": "string",
+      "private": false
     }
   }
 }

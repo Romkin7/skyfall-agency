@@ -1,0 +1,11 @@
+.linkButton {
+  background-color: $orange;
+  -webkit-font-smoothing: antialiased;
+  line-height: normal;
+  padding: 1.4em 2.338em;
+  color: $white;
+  &:visited,
+  &:hover {
+    color: $white;
+  }
+}

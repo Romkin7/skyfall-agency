@@ -1,16 +1,15 @@
 @import './variables';
 @import './nav';
+@import './linkbutton';
+@import './sociallink';
+@import './hero';
+@import './serviceCard';
 
 html {
   font-family: $mainFont;
 }
 a {
   text-decoration: none !important;
-}
-
-h1 {
-  font-family: Staatliches !important;
-  font-size: 120px !important;
 }
 
 #category {
@@ -34,11 +33,6 @@ h1 {
   font-size: 16px !important;
   font-size: 1rem !important;
   line-height: 1.75 !important;
-}
-
-.uk-navbar-container {
-  background: #fff !important;
-  font-family: Staatliches !important;
 }
 
 img:hover {

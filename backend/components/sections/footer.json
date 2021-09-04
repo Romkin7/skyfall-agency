@@ -27,9 +27,6 @@
     "title": {
       "type": "string",
       "required": true
-    },
-    "sosiallink": {
-      "model": "sosiallink"
     }
   }
 }

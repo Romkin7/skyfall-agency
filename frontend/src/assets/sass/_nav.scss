@@ -1,4 +1,7 @@
 .nav {
+  position: fixed;
+  width: 100%;
+  z-index: 20;
   &--brand {
     font-size: calc((2 - 1) * 1.2vw + 1rem);
   }

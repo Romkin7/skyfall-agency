@@ -23,7 +23,9 @@
         }
       },
       "type": "string",
-      "required": true
+      "required": true,
+      "maxLength": 40,
+      "unique": true
     },
     "description": {
       "pluginOptions": {
@@ -32,9 +34,10 @@
         }
       },
       "type": "text",
-      "required": true
+      "required": true,
+      "minLength": 10
     },
-    "cover": {
+    "image": {
       "model": "file",
       "via": "related",
       "allowedTypes": [

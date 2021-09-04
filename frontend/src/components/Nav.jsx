@@ -22,7 +22,7 @@ const Nav = () => (
     render={(data) => (
       <div>
         <div>
-          <nav class="navbar navbar-expand-lg navbar-light bg-light nav">
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav">
             <div class="container-fluid">
               <Link to="/" class="navbar-brand nav--brand">
                 {data.strapiGlobal.siteName}

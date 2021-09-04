@@ -2,11 +2,16 @@
   "collectionName": "components_shared_linkbuttons",
   "info": {
     "name": "linkbutton",
-    "icon": "arrow-alt-circle-right"
+    "icon": "arrow-alt-circle-right",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "textcontent": {
+      "type": "string",
+      "required": true
+    },
+    "href": {
       "type": "string",
       "required": true
     }

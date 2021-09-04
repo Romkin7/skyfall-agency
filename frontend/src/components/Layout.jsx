@@ -14,9 +14,7 @@ const Layout = ({ children, seo }) => (
             metaTitle
             metaDescription
             shareImage {
-              localFile {
-                publicURL
-              }
+              url
             }
           }
         }
@@ -31,6 +29,10 @@ const Layout = ({ children, seo }) => (
         strapiGlobal {
           Footer {
             title
+            linkbutton {
+              textcontent
+              href
+            }
           }
         }
       }
@@ -40,7 +42,10 @@ const Layout = ({ children, seo }) => (
         <Seo seo={seo} />
         <Nav />
         <main>{children}</main>
-        <Footer footer={data.strapiGlobal.Footer} />
+        <Footer
+          footer={data.strapiGlobal.Footer}
+          socialLinks={data.allStrapiSociallink.edges}
+        />
       </>
     )}
   />

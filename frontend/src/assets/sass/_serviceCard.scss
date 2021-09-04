@@ -1,0 +1,13 @@
+.serviceCard {
+  background-color: $gray300;
+  margin-bottom: 1rem;
+  &--head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    &--image {
+      border-radius: 50%;
+    }
+  }
+}

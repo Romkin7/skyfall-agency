@@ -3,11 +3,12 @@ import { GatsbyImage } from "gatsby-plugin-image";
 
 const ServiceCard = ({ service }) => {
   return (
-    <div className="uk-card uk-card-muted">
-      <div className="uk-card-media-top">
+    <div className="serviceCard">
+      <div className="serviceCard--head">
         <GatsbyImage
-          image={service.node.cover.localFile.childImageSharp.gatsbyImageData}
-          alt={`Hero image`}
+          image={service.node.image.localFile.childImageSharp.gatsbyImageData}
+          alt={`Cover image`}
+          className="serviceCard--head--image"
         />
       </div>
       <div className="uk-card-body">
