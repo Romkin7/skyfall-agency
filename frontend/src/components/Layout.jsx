@@ -44,7 +44,7 @@ const Layout = ({ children, seo }) => (
         <main>{children}</main>
         <Footer
           footer={data.strapiGlobal.Footer}
-          socialLinks={data.allStrapiSociallink.edges}
+          socialLinks={data.allStrapiSosiallink.edges}
         />
       </>
     )}

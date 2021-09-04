@@ -14,7 +14,9 @@ const Hero = ({ background, title, content, link }) => {
           <div className="col-12">
             <h1 className="hero--title">{title}</h1>
             {content && <p>{content}</p>}
-            <LinkButton textcontent={link.textcontent} href={link.href} />
+            {link && (
+              <LinkButton textcontent={link.textcontent} href={link.href} />
+            )}
           </div>
         </div>
       </div>

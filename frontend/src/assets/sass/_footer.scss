@@ -1,0 +1,11 @@
+.footer {
+    min-height: 35rem;
+    background-color: $gray300;
+    &--wrapper {
+        height: 35rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}

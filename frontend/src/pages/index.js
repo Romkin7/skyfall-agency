@@ -10,10 +10,10 @@ const IndexPage = () => {
   return (
     <Layout seo={data.strapiHomepage.Seo}>
       <Hero
-        background={data.strapiHomepage.hero.background}
-        title={data.strapiHomepage.hero.title}
-        content={data.strapiHomepage.hero.content}
-        link={data.strapiHomepage.hero.link}
+        background={data.strapiHomepage.Hero.background}
+        title={data.strapiHomepage.Hero.title}
+        content={data.strapiHomepage.Hero.content}
+        link={data.strapiHomepage.Hero.link}
       />
       <section className="services my-5">
         <div className="container">
@@ -36,7 +36,7 @@ const IndexPage = () => {
 const query = graphql`
   query {
     strapiHomepage {
-      hero {
+      Hero {
         title
         background
         content
@@ -51,7 +51,7 @@ const query = graphql`
         id
         content
       }
-      seo {
+      Seo {
         metaTitle
         metaDescription
       }
