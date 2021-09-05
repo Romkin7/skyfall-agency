@@ -30,7 +30,10 @@ const ContactPage = () => {
               />
             </div>
             <div className="col-7">
-              <Form formData={data.strapiContactpage.Contactform} />
+              <Form
+                formData={data.strapiContactpage.Contactform}
+                services={data.strapiContactpage.Contactform.services}
+              />
             </div>
           </div>
         </div>

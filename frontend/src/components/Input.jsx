@@ -10,8 +10,8 @@ const Input = ({
   value,
 }) => {
   return (
-    <>
-      <label htmlFor={name}>{label}</label>
+    <div className="form-group">
+      <label htmlFor={name} className="form-label">{label}</label>
       <input
         id={name}
         type={type}
@@ -22,7 +22,7 @@ const Input = ({
         required={required}
         disabled={disabled}
       />
-    </>
+    </div>
   );
 };
 

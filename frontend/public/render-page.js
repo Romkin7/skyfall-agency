@@ -5269,15 +5269,54 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Input */ "./src/components/Input.jsx");
+/* harmony import */ var _Select__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Select */ "./src/components/Select.jsx");
+/* harmony import */ var _TextArea__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./TextArea */ "./src/components/TextArea.jsx");
+
+
+
 
 
 const Form = ({
-  formData
+  formData,
+  services
 }) => {
+  const setInput = (inputtype, input) => {
+    switch (inputtype) {
+      case "text":
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          type: inputtype,
+          label: input.inputlabel
+        });
+
+      case "email":
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          type: inputtype,
+          label: input.inputlabel
+        });
+
+      case "select":
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Select__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          name: input.htmlfor,
+          label: input.inputlabel,
+          options: services
+        });
+
+      case "textarea":
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_TextArea__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          name: input.htmlfor,
+          label: input.inputlabel
+        });
+
+      default:
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "error");
+    }
+  };
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("form", null, formData.Inputcomponent.map(input => {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
       key: input.id
-    });
+    }, setInput(input.inputtype, input));
   }));
 };
 
@@ -5370,6 +5409,51 @@ const Icon = ({
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Icon);
+
+/***/ }),
+
+/***/ "./src/components/Input.jsx":
+/*!**********************************!*\
+  !*** ./src/components/Input.jsx ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const Input = ({
+  type,
+  label,
+  required,
+  disabled,
+  name,
+  changeHandler,
+  value
+}) => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    htmlFor: name,
+    className: "form-label"
+  }, label), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    id: name,
+    type: type,
+    name: name,
+    className: "input form-control",
+    onChange: event => changeHandler(event),
+    value: value,
+    required: required,
+    disabled: disabled
+  }));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Input);
 
 /***/ }),
 
@@ -5583,6 +5667,55 @@ const Nav = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().crea
 
 /***/ }),
 
+/***/ "./src/components/Select.jsx":
+/*!***********************************!*\
+  !*** ./src/components/Select.jsx ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const Select = ({
+  label,
+  htmlFor,
+  options,
+  required = true,
+  handleChange,
+  service
+}) => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    htmlFor: htmlFor,
+    className: "form-label"
+  }, label), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("select", {
+    id: "subject",
+    required: required,
+    name: "subject",
+    onChange: handleChange,
+    className: "form-select",
+    "aria-label": "Default select example"
+  }, service && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
+    value: service
+  }, service), options.map(subjectInMap => {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
+      key: subjectInMap,
+      value: subjectInMap
+    }, subjectInMap);
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Select);
+
+/***/ }),
+
 /***/ "./src/components/Seo.jsx":
 /*!********************************!*\
   !*** ./src/components/Seo.jsx ***!
@@ -5735,12 +5868,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const SocilaLinks = ({
-  socialLinks
+  socialLinks,
+  side = "center"
 }) => {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
-    className: "socialLinks"
+    className: `socialLinks socialLinks--${side}`
   }, socialLinks.map(socialLink => {
-    console.log(socialLink);
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
       href: socialLink.node.href,
       target: "__blank"
@@ -5751,6 +5884,51 @@ const SocilaLinks = ({
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SocilaLinks);
+
+/***/ }),
+
+/***/ "./src/components/TextArea.jsx":
+/*!*************************************!*\
+  !*** ./src/components/TextArea.jsx ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const TextArea = props => {
+  const {
+    value,
+    required,
+    rows,
+    name,
+    id,
+    label,
+    changeHandler
+  } = props;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    htmlFor: id,
+    className: "form-label"
+  }, label), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("textarea", {
+    id: id,
+    name: name,
+    rows: rows || 4,
+    required: required,
+    className: "textArea form-control",
+    onChange: event => changeHandler(event),
+    value: value
+  }));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TextArea);
 
 /***/ }),
 
@@ -6034,7 +6212,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _public_page_data_sq_d_1255889770_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../public/page-data/sq/d/1255889770.json */ "./public/page-data/sq/d/1255889770.json");
+/* harmony import */ var _public_page_data_sq_d_389437503_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../public/page-data/sq/d/389437503.json */ "./public/page-data/sq/d/389437503.json");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Layout */ "./src/components/Layout.jsx");
@@ -6043,6 +6221,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Hero__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Hero */ "./src/components/Hero.jsx");
 /* harmony import */ var _assets_sass_main_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../assets/sass/main.scss */ "./src/assets/sass/main.scss");
 /* harmony import */ var _assets_sass_main_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_assets_sass_main_scss__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _components_SocialLinks__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/SocialLinks */ "./src/components/SocialLinks.jsx");
+
 
 
 
@@ -6052,7 +6232,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const ContactPage = () => {
-  const data = _public_page_data_sq_d_1255889770_json__WEBPACK_IMPORTED_MODULE_0__.data;
+  const data = _public_page_data_sq_d_389437503_json__WEBPACK_IMPORTED_MODULE_0__.data;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
     seo: data.strapiContactpage.Seo
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_Hero__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -6070,14 +6250,18 @@ const ContactPage = () => {
     className: "col-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("h2", null, data.strapiContactpage.Contactinfo.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_List__WEBPACK_IMPORTED_MODULE_3__["default"], {
     listItemData: data.strapiContactpage.Contactinfo
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_SocialLinks__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    socialLinks: data.allStrapiSociallink.edges,
+    side: "start"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
     className: "col-7"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_Form__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    formData: data.strapiContactpage.Contactform
+    formData: data.strapiContactpage.Contactform,
+    services: data.strapiContactpage.Contactform.services
   }))))));
 };
 
-const query = "1255889770";
+const query = "389437503";
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ContactPage);
 
 /***/ }),
@@ -15745,17 +15929,6 @@ module.exports = require("path");
 
 /***/ }),
 
-/***/ "./public/page-data/sq/d/1255889770.json":
-/*!***********************************************!*\
-  !*** ./public/page-data/sq/d/1255889770.json ***!
-  \***********************************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = JSON.parse('{"data":{"strapiContactpage":{"Hero":{"title":"Ota yteyttä","background":"https://res.cloudinary.com/skyfall21-fi/image/upload/v1630693406/jamesbond_4705710_1280_448a87de8a.jpg","content":"<p>Varaa aikaa, 30 min. ilmaiseksi/ Book time, 30 min. for free.</p>","link":{"href":"/palvelut","id":7,"textcontent":"Tutustu palveluihimme"}},"Contactinfo":{"title":"Yhteystiedot","subtitle":"Myynti/ Asiakaspalvelu","address":"Käyntiosoite: Valimotie 13 A, 00380, Helsinki, Finland","link":[{"id":1,"href":"tel","text":"phone: +358 40 846 56 58","value":"tel:+358408465658"},{"id":2,"href":"mailto","text":"email: skyfall@skyfall.agency","value":"mailto:skyfall@skyfall.agency"}]},"Contactform":{"services":{"values":[{"id":1,"value":"verkkokauppa","text":"Verkkokauppa"},{"id":2,"value":"verkkosivut","text":"Verkkosivut"},{"id":3,"value":"digitaalisen-transformaation-kehityshanke","text":"Digitaalisen transformaation kehityshanke"},{"id":4,"value":"graafinen-suunnittelu-ja-yritysilme","text":"Graafinen suunnittelu ja yritysilme"},{"id":5,"value":"saas-ohjelmist- ratkaisu","text":"SaaS ohjelmisto ratkaisu"},{"id":6,"value":"sähköpostimarkkinointi-suunnittelu-ja-toteutus","text":"Sähköpostimarkkinointi - suunnittelu ja toteutus"},{"id":7,"value":"some-ja-media-näkyvyys","text":"SOME ja media näkyvyys"},{"id":8,"value":"sisällöntuotanto-ja-viestintä-palvelut","text":"Sisällöntuotanto ja viestintä palvelut"},{"id":9,"value":"liikejuridiikka","text":"Liikejuridiikka"},{"id":10,"value":"muu-asia","text":"Muu asia"}]},"Inputcomponent":[{"id":10,"inputtype":"text","inputlabel":"Etunimi","htmlfor":"firstname","required":true,"disabled":false,"readonly":false,"name":"firstname"},{"id":8,"inputtype":"text","inputlabel":"Sukunimi","htmlfor":"surename","required":true,"disabled":false,"readonly":false,"name":"lastname"},{"id":12,"inputtype":"text","inputlabel":"Yritys","htmlfor":"company","required":true,"disabled":false,"readonly":false,"name":"company"},{"id":7,"inputtype":"email","inputlabel":"Email","htmlfor":"email","required":true,"disabled":false,"readonly":false,"name":"email"},{"id":11,"inputtype":"select","inputlabel":"Olen kiinnostunut","htmlfor":"service","required":true,"disabled":false,"readonly":false,"name":"service"},{"id":9,"inputtype":"textarea","inputlabel":"Viesti","htmlfor":"message","required":true,"disabled":false,"readonly":false,"name":"message"}],"Button":[{"id":1,"text":"Lähetä","type":"submit","disabled":false}]},"Seo":{"metaTitle":"Skyfall Yhteystiedot","metaDescription":"Skyfall yhteystiedot, Varaa konsultaatio-aikaa. Book a Consultation, Varaa aikaa Calendlyssä 30 min. ilmaiseksi/ Book the Calendly time 30 min. for free\\n"}}}}');
-
-/***/ }),
-
 /***/ "./public/page-data/sq/d/2784953068.json":
 /*!***********************************************!*\
   !*** ./public/page-data/sq/d/2784953068.json ***!
@@ -15786,6 +15959,17 @@ module.exports = JSON.parse('{"data":{"strapiHomepage":{"Hero":{"title":"Digitoi
 
 "use strict";
 module.exports = JSON.parse('{"data":{"strapiGlobal":{"siteName":"Skyfall Agency","favicon":{"url":"https://res.cloudinary.com/skyfall21-fi/image/upload/v1630695031/favicon_5a1c6043bf.png"},"defaultSeo":{"metaTitle":"Digitoimisto","metaDescription":"Skyfall Agency - Digitoimisto","shareImage":{"url":"https://res.cloudinary.com/skyfall21-fi/image/upload/v1630693406/jamesbond_4705710_1280_448a87de8a.jpg"}}}}}');
+
+/***/ }),
+
+/***/ "./public/page-data/sq/d/389437503.json":
+/*!**********************************************!*\
+  !*** ./public/page-data/sq/d/389437503.json ***!
+  \**********************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('{"data":{"allStrapiSociallink":{"edges":[{"node":{"href":"https://www.facebook.com/Skyfall-Agency-103541184943610","iconname":"facebook"}},{"node":{"href":"https://www.linkedin.com/company/skyfall-agency/","iconname":"linkedin"}}]},"strapiContactpage":{"Hero":{"title":"Ota yteyttä","background":"https://res.cloudinary.com/skyfall21-fi/image/upload/v1630693406/jamesbond_4705710_1280_448a87de8a.jpg","content":"<p>Varaa aikaa, 30 min. ilmaiseksi/ Book time, 30 min. for free.</p>","link":{"href":"/palvelut","id":7,"textcontent":"Tutustu palveluihimme"}},"Contactinfo":{"title":"Yhteystiedot","subtitle":"Myynti/ Asiakaspalvelu","address":"Käyntiosoite: Valimotie 13 A, 00380, Helsinki, Finland","link":[{"id":1,"href":"tel","text":"phone: +358 40 846 56 58","value":"tel:+358408465658"},{"id":2,"href":"mailto","text":"email: skyfall@skyfall.agency","value":"mailto:skyfall@skyfall.agency"}]},"Contactform":{"services":{"values":[{"id":1,"value":"verkkokauppa","text":"Verkkokauppa"},{"id":2,"value":"verkkosivut","text":"Verkkosivut"},{"id":3,"value":"digitaalisen-transformaation-kehityshanke","text":"Digitaalisen transformaation kehityshanke"},{"id":4,"value":"graafinen-suunnittelu-ja-yritysilme","text":"Graafinen suunnittelu ja yritysilme"},{"id":5,"value":"saas-ohjelmist- ratkaisu","text":"SaaS ohjelmisto ratkaisu"},{"id":6,"value":"sähköpostimarkkinointi-suunnittelu-ja-toteutus","text":"Sähköpostimarkkinointi - suunnittelu ja toteutus"},{"id":7,"value":"some-ja-media-näkyvyys","text":"SOME ja media näkyvyys"},{"id":8,"value":"sisällöntuotanto-ja-viestintä-palvelut","text":"Sisällöntuotanto ja viestintä palvelut"},{"id":9,"value":"liikejuridiikka","text":"Liikejuridiikka"},{"id":10,"value":"muu-asia","text":"Muu asia"}]},"Inputcomponent":[{"id":10,"inputtype":"text","inputlabel":"Etunimi","htmlfor":"firstname","required":true,"disabled":false,"readonly":false,"name":"firstname"},{"id":8,"inputtype":"text","inputlabel":"Sukunimi","htmlfor":"surename","required":true,"disabled":false,"readonly":false,"name":"lastname"},{"id":12,"inputtype":"text","inputlabel":"Yritys","htmlfor":"company","required":true,"disabled":false,"readonly":false,"name":"company"},{"id":7,"inputtype":"email","inputlabel":"Email","htmlfor":"email","required":true,"disabled":false,"readonly":false,"name":"email"},{"id":11,"inputtype":"select","inputlabel":"Olen kiinnostunut","htmlfor":"service","required":true,"disabled":false,"readonly":false,"name":"service"},{"id":9,"inputtype":"textarea","inputlabel":"Viesti","htmlfor":"message","required":true,"disabled":false,"readonly":false,"name":"message"}],"Button":[{"id":1,"text":"Lähetä","type":"submit","disabled":false}]},"Seo":{"metaTitle":"Skyfall Yhteystiedot","metaDescription":"Skyfall yhteystiedot, Varaa konsultaatio-aikaa. Book a Consultation, Varaa aikaa Calendlyssä 30 min. ilmaiseksi/ Book the Calendly time 30 min. for free\\n"}}}}');
 
 /***/ }),
 
