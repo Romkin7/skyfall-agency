@@ -18,7 +18,13 @@ module.exports = {
       options: {
         apiURL: process.env.API_URL || "http://localhost:1337",
         collectionTypes: [`service`, `price`, `navitem`, `sociallink`],
-        singleTypes: [`homepage`, `global`, `servicepage`, `contactpage`],
+        singleTypes: [
+          `homepage`,
+          `global`,
+          `servicepage`,
+          `contactpage`,
+          `companypage`,
+        ],
         queryLimit: 1000,
       },
     },

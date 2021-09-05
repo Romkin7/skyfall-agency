@@ -1,0 +1,14 @@
+.button {
+    background-color: $orange;
+    color: $white;
+    padding: 1.4em 2.338em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    svg {
+        width: 2rem;
+        height: 1.6rem;
+    }
+}

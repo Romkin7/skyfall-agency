@@ -3,7 +3,7 @@ import React from "react";
 const Select = ({
   label,
   htmlFor,
-  options,
+  services,
   required = true,
   handleChange,
   service,
@@ -22,13 +22,14 @@ const Select = ({
         aria-label="Default select example"
       >
         {service && <option value={service}>{service}</option>}
-        {options.map((subjectInMap) => {
-          return (
-            <option key={subjectInMap} value={subjectInMap}>
-              {subjectInMap}
-            </option>
-          );
-        })}
+        {services.length &&
+          services.map((serviceInMap) => {
+            return (
+              <option key={serviceInMap.id} value={serviceInMap.value}>
+                {serviceInMap.text}
+              </option>
+            );
+          })}
       </select>
     </div>
   );

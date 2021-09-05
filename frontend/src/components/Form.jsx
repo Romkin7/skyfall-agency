@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import Input from "./Input";
 import Select from "./Select";
 import TextArea from "./TextArea";
+import Button from "./Button";
 
 const Form = ({ formData, services }) => {
   const setInput = (inputtype, input) => {
@@ -15,7 +16,7 @@ const Form = ({ formData, services }) => {
           <Select
             name={input.htmlfor}
             label={input.inputlabel}
-            options={services}
+            services={services.values}
           />
         );
       case "textarea":
@@ -24,6 +25,7 @@ const Form = ({ formData, services }) => {
         return <p>error</p>;
     }
   };
+  console.log(formData);
   return (
     <form>
       {formData.Inputcomponent.map((input) => {
@@ -31,6 +33,7 @@ const Form = ({ formData, services }) => {
           <Fragment key={input.id}>{setInput(input.inputtype, input)}</Fragment>
         );
       })}
+      <Button type={formData.Button[0].type}>{formData.Button[0].text}</Button>
     </form>
   );
 };
