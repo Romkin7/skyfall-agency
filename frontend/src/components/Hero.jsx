@@ -10,10 +10,17 @@ const Hero = ({ background, title, content, link, landing }) => {
       }}
     >
       <div className="container">
-        <div className="row d-flex justify-content-center">
-          <div className="col-12">
+        <div className="row">
+          <div className="col-12 d-flex flex-column justify-content-center align-items-center">
             <h1 className="hero--title">{title}</h1>
-            {content && <p>{content}</p>}
+            {content && (
+              <div
+                className="hero--content"
+                dangerouslySetInnerHTML={{
+                  __html: content,
+                }}
+              />
+            )}
             {link && (
               <LinkButton textcontent={link.textcontent} href={link.href} />
             )}

@@ -13,6 +13,11 @@
       color: $orange;
     }
   }
+  &--content {
+    p {
+      color: $white !important;
+    }
+  }
   &--title {
     font-size: calc((2.8 - 1) * 1.2vw + 1rem) !important;
     line-height: 1.2992;
@@ -23,5 +28,8 @@
     text-transform: none;
     text-align: center;
     color: $white;
+  }
+  .linkButton {
+    max-width: 30%;
   }
 }

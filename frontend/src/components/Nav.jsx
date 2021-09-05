@@ -44,7 +44,7 @@ const Nav = () => (
               {data.allStrapiNavitem.edges.map((navItem) => {
                 return (
                   <li key={navItem.node.id} className="nav-item">
-                    <Link className="nav-link" to={navItem.node.href}>
+                    <Link className="nav-link nav--link" to={navItem.node.href}>
                       {navItem.node.linktext}
                     </Link>
                   </li>
