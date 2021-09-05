@@ -20,42 +20,40 @@ const Nav = () => (
       }
     `}
     render={(data) => (
-      <div>
-        <div>
-          <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav">
-            <div class="container-fluid">
-              <Link to="/" class="navbar-brand nav--brand">
-                {data.strapiGlobal.siteName}
-              </Link>
-              <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span class="navbar-toggler-icon"></span>
-                Menu
-              </button>
-            </div>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                {data.allStrapiNavitem.edges.map((navItem) => {
-                  return (
-                    <li key={navItem.node.id} className="nav-item">
-                      <Link className="nav-link" to={navItem.node.href}>
-                        {navItem.node.linktext}
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          </nav>
-        </div>
-      </div>
+      <header>
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark nav">
+          <div className="container-fluid">
+            <Link to="/" className="navbar-brand nav--brand">
+              {data.strapiGlobal.siteName}
+            </Link>
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon"></span>
+              Menu
+            </button>
+          </div>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              {data.allStrapiNavitem.edges.map((navItem) => {
+                return (
+                  <li key={navItem.node.id} className="nav-item">
+                    <Link className="nav-link" to={navItem.node.href}>
+                      {navItem.node.linktext}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </nav>
+      </header>
     )}
   />
 );

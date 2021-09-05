@@ -10,7 +10,7 @@ const Layout = ({ children, seo }) => (
     query={graphql`
       query {
         strapiHomepage {
-          seo {
+          Seo {
             metaTitle
             metaDescription
             shareImage {

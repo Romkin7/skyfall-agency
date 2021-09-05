@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_sections_contactforms",
+  "info": {
+    "name": "Contactform",
+    "icon": "file-contract",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "services": {
+      "type": "json",
+      "required": true
+    },
+    "Inputcomponent": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.input",
+      "required": true
+    },
+    "Button": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.button",
+      "required": true
+    }
+  }
+}

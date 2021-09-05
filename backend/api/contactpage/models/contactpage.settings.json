@@ -2,7 +2,8 @@
   "kind": "singleType",
   "collectionName": "contactpages",
   "info": {
-    "name": "contactpage"
+    "name": "contactpage",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -32,6 +33,38 @@
         }
       },
       "type": "string",
+      "required": true
+    },
+    "Hero": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "sections.hero"
+    },
+    "Contactinfo": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "sections.contactinfo",
+      "required": true
+    },
+    "Contactform": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "sections.contactform",
       "required": true
     }
   }

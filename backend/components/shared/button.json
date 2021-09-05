@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_shared_buttons",
+  "info": {
+    "name": "Button",
+    "icon": "audio-description"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true,
+      "minLength": 2
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "button",
+        "submit",
+        "reset"
+      ],
+      "default": "submit",
+      "required": true
+    },
+    "disabled": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

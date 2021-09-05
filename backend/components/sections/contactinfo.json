@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_shared_contactinfos",
+  "info": {
+    "name": "Contactinfo",
+    "icon": "id-card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "address": {
+      "type": "string"
+    },
+    "link": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.link",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "minLength": 2
+    },
+    "subtitle": {
+      "type": "string",
+      "minLength": 2
+    }
+  }
+}

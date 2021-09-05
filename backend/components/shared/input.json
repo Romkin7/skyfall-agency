@@ -1,0 +1,59 @@
+{
+  "collectionName": "components_shared_inputs",
+  "info": {
+    "name": "inputcomponent",
+    "icon": "text-height",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "inputtype": {
+      "type": "enumeration",
+      "enum": [
+        "text",
+        "textarea",
+        "select",
+        "tel",
+        "number",
+        "email"
+      ],
+      "default": "text",
+      "required": true
+    },
+    "inputlabel": {
+      "type": "string",
+      "required": true,
+      "minLength": 2
+    },
+    "htmlfor": {
+      "type": "string",
+      "required": true,
+      "minLength": 2
+    },
+    "required": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "disabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "readonly": {
+      "type": "boolean",
+      "default": false
+    },
+    "name": {
+      "type": "enumeration",
+      "enum": [
+        "firstname",
+        "lastname",
+        "company",
+        "email",
+        "message",
+        "service"
+      ],
+      "required": true
+    }
+  }
+}

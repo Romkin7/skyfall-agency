@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_shared_links",
+  "info": {
+    "name": "Link",
+    "icon": "ambulance",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "href": {
+      "type": "enumeration",
+      "enum": [
+        "default",
+        "tel",
+        "mailto"
+      ],
+      "required": true
+    },
+    "target": {
+      "type": "enumeration",
+      "enum": [
+        "blank"
+      ],
+      "required": false
+    },
+    "text": {
+      "type": "string",
+      "private": false,
+      "required": true,
+      "minLength": 2
+    },
+    "value": {
+      "type": "string",
+      "required": true,
+      "minLength": 2
+    }
+  }
+}

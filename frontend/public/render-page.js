@@ -15,7 +15,8 @@
 exports.ssrComponents = {
   "component---cache-dev-404-page-js": preferDefault(__webpack_require__(/*! ./.cache/dev-404-page.js */ "./.cache/dev-404-page.js")),
   "component---src-pages-404-js": preferDefault(__webpack_require__(/*! ./src/pages/404.js */ "./src/pages/404.js")),
-  "component---src-pages-index-js": preferDefault(__webpack_require__(/*! ./src/pages/index.js */ "./src/pages/index.js"))
+  "component---src-pages-index-js": preferDefault(__webpack_require__(/*! ./src/pages/index.js */ "./src/pages/index.js")),
+  "component---src-pages-yhteystiedot-js": preferDefault(__webpack_require__(/*! ./src/pages/yhteystiedot.js */ "./src/pages/yhteystiedot.js"))
   }
 
 
@@ -5245,6 +5246,35 @@ const Footer = ({
 
 /***/ }),
 
+/***/ "./src/components/Form.jsx":
+/*!*********************************!*\
+  !*** ./src/components/Form.jsx ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const Form = ({
+  formData
+}) => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("form", null, formData.Inputcomponent.map(input => {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+      key: input.id
+    });
+  }));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Form);
+
+/***/ }),
+
 /***/ "./src/components/Hero.jsx":
 /*!*********************************!*\
   !*** ./src/components/Hero.jsx ***!
@@ -5302,7 +5332,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _public_page_data_sq_d_4079294742_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../public/page-data/sq/d/4079294742.json */ "./public/page-data/sq/d/4079294742.json");
+/* harmony import */ var _public_page_data_sq_d_1222685936_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../public/page-data/sq/d/1222685936.json */ "./public/page-data/sq/d/1222685936.json");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
@@ -5323,14 +5353,14 @@ const Layout = ({
   children,
   seo
 }) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(gatsby__WEBPACK_IMPORTED_MODULE_3__.StaticQuery, {
-  query: "4079294742",
+  query: "1222685936",
   render: data => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement((react__WEBPACK_IMPORTED_MODULE_1___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_Seo__WEBPACK_IMPORTED_MODULE_5__["default"], {
     seo: seo
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_Nav__WEBPACK_IMPORTED_MODULE_4__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("main", null, children), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_Footer__WEBPACK_IMPORTED_MODULE_6__["default"], {
     footer: data.strapiGlobal.Footer,
     socialLinks: data.allStrapiSosiallink.edges
   })),
-  data: _public_page_data_sq_d_4079294742_json__WEBPACK_IMPORTED_MODULE_0__
+  data: _public_page_data_sq_d_1222685936_json__WEBPACK_IMPORTED_MODULE_0__
 });
 
 Layout.propTypes = {
@@ -5371,6 +5401,81 @@ const LinkButton = ({
 
 /***/ }),
 
+/***/ "./src/components/List.jsx":
+/*!*********************************!*\
+  !*** ./src/components/List.jsx ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _ListItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ListItem */ "./src/components/ListItem.jsx");
+
+
+
+const List = ({
+  listItemData
+}) => {
+  console.log(listItemData);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
+    className: "list list-group list-group-flush"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ListItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    item: listItemData.subtitle
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ListItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    item: listItemData.address
+  }), listItemData.link.map(item => {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ListItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      key: item.id,
+      link: item.href,
+      item: item
+    });
+  }));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (List);
+
+/***/ }),
+
+/***/ "./src/components/ListItem.jsx":
+/*!*************************************!*\
+  !*** ./src/components/ListItem.jsx ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const ListItem = ({
+  link,
+  item
+}) => {
+  {
+    console.log(item);
+  }
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, link ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+    className: "list-group-item list--item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+    href: item.value
+  }, item.text)) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+    className: "list-group-item list--item"
+  }, item));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ListItem);
+
+/***/ }),
+
 /***/ "./src/components/Nav.jsx":
 /*!********************************!*\
   !*** ./src/components/Nav.jsx ***!
@@ -5392,15 +5497,15 @@ __webpack_require__.r(__webpack_exports__);
 
 const Nav = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(gatsby__WEBPACK_IMPORTED_MODULE_2__.StaticQuery, {
   query: "684390084",
-  render: data => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("nav", {
-    class: "navbar navbar-expand-lg navbar-dark bg-dark nav"
+  render: data => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("header", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("nav", {
+    className: "navbar navbar-expand-lg navbar-dark bg-dark nav"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
-    class: "container-fluid"
+    className: "container-fluid"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(gatsby__WEBPACK_IMPORTED_MODULE_2__.Link, {
     to: "/",
-    class: "navbar-brand nav--brand"
+    className: "navbar-brand nav--brand"
   }, data.strapiGlobal.siteName), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("button", {
-    class: "navbar-toggler",
+    className: "navbar-toggler",
     type: "button",
     "data-bs-toggle": "collapse",
     "data-bs-target": "#navbarSupportedContent",
@@ -5408,12 +5513,12 @@ const Nav = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().crea
     "aria-expanded": "false",
     "aria-label": "Toggle navigation"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("span", {
-    class: "navbar-toggler-icon"
+    className: "navbar-toggler-icon"
   }), "Menu")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
-    class: "collapse navbar-collapse",
+    className: "collapse navbar-collapse",
     id: "navbarSupportedContent"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("ul", {
-    class: "navbar-nav me-auto mb-2 mb-lg-0"
+    className: "navbar-nav me-auto mb-2 mb-lg-0"
   }, data.allStrapiNavitem.edges.map(navItem => {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("li", {
       key: navItem.node.id,
@@ -5422,7 +5527,7 @@ const Nav = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().crea
       className: "nav-link",
       to: navItem.node.href
     }, navItem.node.linktext));
-  })))))),
+  }))))),
   data: _public_page_data_sq_d_684390084_json__WEBPACK_IMPORTED_MODULE_0__
 });
 
@@ -5575,7 +5680,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _public_page_data_sq_d_4079294742_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../public/page-data/sq/d/4079294742.json */ "./public/page-data/sq/d/4079294742.json");
+/* harmony import */ var _public_page_data_sq_d_1222685936_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../public/page-data/sq/d/1222685936.json */ "./public/page-data/sq/d/1222685936.json");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
@@ -5596,14 +5701,14 @@ const Layout = ({
   children,
   seo
 }) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(gatsby__WEBPACK_IMPORTED_MODULE_3__.StaticQuery, {
-  query: "4079294742",
+  query: "1222685936",
   render: data => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement((react__WEBPACK_IMPORTED_MODULE_1___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_Seo__WEBPACK_IMPORTED_MODULE_5__["default"], {
     seo: seo
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_Nav__WEBPACK_IMPORTED_MODULE_4__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("main", null, children), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_Footer__WEBPACK_IMPORTED_MODULE_6__["default"], {
     footer: data.strapiGlobal.Footer,
     socialLinks: data.allStrapiSosiallink.edges
   })),
-  data: _public_page_data_sq_d_4079294742_json__WEBPACK_IMPORTED_MODULE_0__
+  data: _public_page_data_sq_d_1222685936_json__WEBPACK_IMPORTED_MODULE_0__
 });
 
 Layout.propTypes = {
@@ -5788,7 +5893,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _public_page_data_sq_d_1482649832_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../public/page-data/sq/d/1482649832.json */ "./public/page-data/sq/d/1482649832.json");
+/* harmony import */ var _public_page_data_sq_d_3012998877_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../public/page-data/sq/d/3012998877.json */ "./public/page-data/sq/d/3012998877.json");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Layout */ "./src/components/Layout.jsx");
@@ -5802,14 +5907,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const IndexPage = () => {
-  const data = _public_page_data_sq_d_1482649832_json__WEBPACK_IMPORTED_MODULE_0__.data;
+  const data = _public_page_data_sq_d_3012998877_json__WEBPACK_IMPORTED_MODULE_0__.data;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    seo: data.strapiHomepage.seo
+    seo: data.strapiHomepage.Seo
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_Hero__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    background: data.strapiHomepage.hero.background,
-    title: data.strapiHomepage.hero.title,
-    content: data.strapiHomepage.hero.content,
-    link: data.strapiHomepage.hero.link
+    background: data.strapiHomepage.Hero.background,
+    title: data.strapiHomepage.Hero.title,
+    content: data.strapiHomepage.Hero.content,
+    link: data.strapiHomepage.Hero.link
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("section", {
     className: "services my-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
@@ -5827,8 +5932,67 @@ const IndexPage = () => {
   }))))));
 };
 
-const query = "1482649832";
+const query = "3012998877";
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IndexPage);
+
+/***/ }),
+
+/***/ "./src/pages/yhteystiedot.js":
+/*!***********************************!*\
+  !*** ./src/pages/yhteystiedot.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _public_page_data_sq_d_1255889770_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../public/page-data/sq/d/1255889770.json */ "./public/page-data/sq/d/1255889770.json");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Layout */ "./src/components/Layout.jsx");
+/* harmony import */ var _components_List__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/List */ "./src/components/List.jsx");
+/* harmony import */ var _components_Form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Form */ "./src/components/Form.jsx");
+/* harmony import */ var _components_Hero__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Hero */ "./src/components/Hero.jsx");
+/* harmony import */ var _assets_sass_main_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../assets/sass/main.scss */ "./src/assets/sass/main.scss");
+/* harmony import */ var _assets_sass_main_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_assets_sass_main_scss__WEBPACK_IMPORTED_MODULE_6__);
+
+
+
+
+
+
+
+
+const ContactPage = () => {
+  const data = _public_page_data_sq_d_1255889770_json__WEBPACK_IMPORTED_MODULE_0__.data;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    seo: data.strapiContactpage.Seo
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_Hero__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    background: data.strapiContactpage.Hero.background,
+    title: data.strapiContactpage.Hero.title,
+    content: data.strapiContactpage.Hero.content,
+    link: data.strapiContactpage.Hero.link
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("section", {
+    className: "services my-5"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
+    className: "row d-flex justify-content-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
+    className: "col-5"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("h2", null, data.strapiContactpage.Contactinfo.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_List__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    listItemData: data.strapiContactpage.Contactinfo
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
+    className: "col-7"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_Form__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    formData: data.strapiContactpage.Contactform
+  }))))));
+};
+
+const query = "1255889770";
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ContactPage);
 
 /***/ }),
 
@@ -15495,14 +15659,36 @@ module.exports = require("path");
 
 /***/ }),
 
-/***/ "./public/page-data/sq/d/1482649832.json":
+/***/ "./public/page-data/sq/d/1222685936.json":
 /*!***********************************************!*\
-  !*** ./public/page-data/sq/d/1482649832.json ***!
+  !*** ./public/page-data/sq/d/1222685936.json ***!
   \***********************************************/
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"data":{"strapiHomepage":{"hero":{"title":"Digitoimisto","background":"https://res.cloudinary.com/skyfall21-fi/image/upload/v1630693406/jamesbond_4705710_1280_448a87de8a.jpg","content":"Digitaalinen transformaatio, verkkosivut, verkkokaupat, SaaS alustat, tietokannat, myynnin automaatio, markkinointi, ylläpito ja SOME","link":{"href":"/yhteystiedot","id":5,"textcontent":"Varaa konsultaatio-aikaa. Book a Consultation"}},"Main":{"title":"Ohjelmistojen kehityspalvelu, kreatiivinen markkinointitoimisto ja henkilöstövuokrausta ja IT alihankintaa","id":2,"content":"<p>Skyfall Agency on kreatiivinen kansainvälinen yritys, joka toteuttaa digitaalisia ja liiketoiminnallisia ratkaisuja Asiakkaiden tarpeiden mukaan.</p>\\n\\n<h3>Ratkaisumme</h3>\\n\\n<ul>\\n<li>Ohjelmistojen suunnittelu ja valmistus</li>\\n\\n<li>Verkkosovellusten ja mobiilisovellusten valmistus</li>\\n\\n<li>Henkilöstövuokraus, alihankinta, outstaffing</li>\\n\\n<li>WordPress verkkosivut</li>\\n\\n<li>Oman alustan verkkosivut</li>\\n\\n<li>Verkkokaupat ja verkkopalvelut</li>\\n\\n<li>Digitaalisen transformaation projektien toteutus</li>\\n\\n<li>Julkisen rahoituksen projektien johtaminen ja kehittäminen</li>\\n\\n<li>AI, Big Data, SaaS ratkaisut</li>\\n\\n<li>Graafinen suunnittelu, brand design, etikettisuunnittelu</li>\\n\\n<li>Sähköpostimarkkinointi suunnittelu, analysointi ja kehittäminen</li>\\n\\n<li>Sisällöntuotanto</li>\\n\\n<li>Englanninkieliset SOME kampanjat, SOME yhteisöjen hallinta viennissä ja kansainvälisillä markkinoilla</li>\\n</ul>\\n\\n<p>Kansainvälinen brändien PR ja buustaus palvelut</p>"},"seo":{"metaTitle":"Digitoimisto","metaDescription":"Digitaalinen transformaatio, verkkosivut, verkkokaupat, SaaS alustat, tietokannat, myynnin automaatio, markkinointi, ylläpito ja SOME"}}}}');
+module.exports = JSON.parse('{"data":{"strapiHomepage":{"Seo":{"metaTitle":"Digitoimisto","metaDescription":"Digitaalinen transformaatio, verkkosivut, verkkokaupat, SaaS alustat, tietokannat, myynnin automaatio, markkinointi, ylläpito ja SOME","shareImage":{"url":"https://res.cloudinary.com/skyfall21-fi/image/upload/v1630693406/jamesbond_4705710_1280_448a87de8a.jpg"}}},"allStrapiSosiallink":{"edges":[{"node":{"href":"https://www.facebook.com/Skyfall-Agency-103541184943610","iconname":"facebook"}},{"node":{"href":"https://www.linkedin.com/company/skyfall-agency/","iconname":"linkedin"}}]},"strapiGlobal":{"Footer":{"title":"Skyfall Agency","linkbutton":{"textcontent":"Varaa aikaa Calendlyssä 30 min. ilmaiseksi/ Book the Calendly time 30 min. for free","href":"/yhteystiedot"}}}}}');
+
+/***/ }),
+
+/***/ "./public/page-data/sq/d/1255889770.json":
+/*!***********************************************!*\
+  !*** ./public/page-data/sq/d/1255889770.json ***!
+  \***********************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('{"data":{"strapiContactpage":{"Hero":{"title":"Ota yteyttä","background":"https://res.cloudinary.com/skyfall21-fi/image/upload/v1630693406/jamesbond_4705710_1280_448a87de8a.jpg","content":"<p>Varaa aikaa, 30 min. ilmaiseksi/ Book time, 30 min. for free.</p>","link":{"href":"/palvelut","id":7,"textcontent":"Tutustu palveluihimme"}},"Contactinfo":{"title":"Yhteystiedot","subtitle":"Myynti/ Asiakaspalvelu","address":"Käyntiosoite: Valimotie 13 A, 00380, Helsinki, Finland","link":[{"id":1,"href":"tel","text":"phone: +358 40 846 56 58","value":"tel:+358408465658"},{"id":2,"href":"mailto","text":"email: skyfall@skyfall.agency","value":"mailto:skyfall@skyfall.agency"}]},"Contactform":{"services":{"values":[{"id":1,"value":"verkkokauppa","text":"Verkkokauppa"},{"id":2,"value":"verkkosivut","text":"Verkkosivut"},{"id":3,"value":"digitaalisen-transformaation-kehityshanke","text":"Digitaalisen transformaation kehityshanke"},{"id":4,"value":"graafinen-suunnittelu-ja-yritysilme","text":"Graafinen suunnittelu ja yritysilme"},{"id":5,"value":"saas-ohjelmist- ratkaisu","text":"SaaS ohjelmisto ratkaisu"},{"id":6,"value":"sähköpostimarkkinointi-suunnittelu-ja-toteutus","text":"Sähköpostimarkkinointi - suunnittelu ja toteutus"},{"id":7,"value":"some-ja-media-näkyvyys","text":"SOME ja media näkyvyys"},{"id":8,"value":"sisällöntuotanto-ja-viestintä-palvelut","text":"Sisällöntuotanto ja viestintä palvelut"},{"id":9,"value":"liikejuridiikka","text":"Liikejuridiikka"},{"id":10,"value":"muu-asia","text":"Muu asia"}]},"Inputcomponent":[{"id":10,"inputtype":"text","inputlabel":"Etunimi","htmlfor":"firstname","required":true,"disabled":false,"readonly":false,"name":"firstname"},{"id":8,"inputtype":"text","inputlabel":"Sukunimi","htmlfor":"surename","required":true,"disabled":false,"readonly":false,"name":"lastname"},{"id":12,"inputtype":"text","inputlabel":"Yritys","htmlfor":"company","required":true,"disabled":false,"readonly":false,"name":"company"},{"id":7,"inputtype":"email","inputlabel":"Email","htmlfor":"email","required":true,"disabled":false,"readonly":false,"name":"email"},{"id":11,"inputtype":"select","inputlabel":"Olen kiinnostunut","htmlfor":"service","required":true,"disabled":false,"readonly":false,"name":"service"},{"id":9,"inputtype":"textarea","inputlabel":"Viesti","htmlfor":"message","required":true,"disabled":false,"readonly":false,"name":"message"}],"Button":[{"id":1,"text":"Lähetä","type":"submit","disabled":false}]},"Seo":{"metaTitle":"Skyfall Yhteystiedot","metaDescription":"Skyfall yhteystiedot, Varaa konsultaatio-aikaa. Book a Consultation, Varaa aikaa Calendlyssä 30 min. ilmaiseksi/ Book the Calendly time 30 min. for free\\n"}}}}');
+
+/***/ }),
+
+/***/ "./public/page-data/sq/d/3012998877.json":
+/*!***********************************************!*\
+  !*** ./public/page-data/sq/d/3012998877.json ***!
+  \***********************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('{"data":{"strapiHomepage":{"Hero":{"title":"Digitoimisto","background":"https://res.cloudinary.com/skyfall21-fi/image/upload/v1630693406/jamesbond_4705710_1280_448a87de8a.jpg","content":"<p>Digitaalinen transformaatio, verkkosivut, verkkokaupat, SaaS alustat, tietokannat, myynnin automaatio, markkinointi, ylläpito ja SOME</p>","link":{"href":"/yteystiedot","id":6,"textcontent":"Varaa konsultaatio-aikaa. Book a Consultation"}},"Main":{"title":"Ohjelmistojen kehityspalvelu, kreatiivinen markkinointitoimisto ja henkilöstövuokrausta ja IT alihankintaa","id":2,"content":"<p>Skyfall Agency on kreatiivinen kansainvälinen yritys, joka toteuttaa digitaalisia ja liiketoiminnallisia ratkaisuja Asiakkaiden tarpeiden mukaan.</p>\\n\\n<h3>Ratkaisumme</h3>\\n\\n<ul>\\n<li>Ohjelmistojen suunnittelu ja valmistus</li>\\n\\n<li>Verkkosovellusten ja mobiilisovellusten valmistus</li>\\n\\n<li>Henkilöstövuokraus, alihankinta, outstaffing</li>\\n\\n<li>WordPress verkkosivut</li>\\n\\n<li>Oman alustan verkkosivut</li>\\n\\n<li>Verkkokaupat ja verkkopalvelut</li>\\n\\n<li>Digitaalisen transformaation projektien toteutus</li>\\n\\n<li>Julkisen rahoituksen projektien johtaminen ja kehittäminen</li>\\n\\n<li>AI, Big Data, SaaS ratkaisut</li>\\n\\n<li>Graafinen suunnittelu, brand design, etikettisuunnittelu</li>\\n\\n<li>Sähköpostimarkkinointi suunnittelu, analysointi ja kehittäminen</li>\\n\\n<li>Sisällöntuotanto</li>\\n\\n<li>Englanninkieliset SOME kampanjat, SOME yhteisöjen hallinta viennissä ja kansainvälisillä markkinoilla</li>\\n</ul>\\n\\n<p>Kansainvälinen brändien PR ja buustaus palvelut</p>"},"Seo":{"metaTitle":"Digitoimisto","metaDescription":"Digitaalinen transformaatio, verkkosivut, verkkokaupat, SaaS alustat, tietokannat, myynnin automaatio, markkinointi, ylläpito ja SOME"}}}}');
 
 /***/ }),
 
@@ -15514,17 +15700,6 @@ module.exports = JSON.parse('{"data":{"strapiHomepage":{"hero":{"title":"Digitoi
 
 "use strict";
 module.exports = JSON.parse('{"data":{"strapiGlobal":{"siteName":"Skyfall Agency","favicon":{"url":"https://res.cloudinary.com/skyfall21-fi/image/upload/v1630695031/favicon_5a1c6043bf.png"},"defaultSeo":{"metaTitle":"Digitoimisto","metaDescription":"Skyfall Agency - Digitoimisto","shareImage":{"url":"https://res.cloudinary.com/skyfall21-fi/image/upload/v1630693406/jamesbond_4705710_1280_448a87de8a.jpg"}}}}}');
-
-/***/ }),
-
-/***/ "./public/page-data/sq/d/4079294742.json":
-/*!***********************************************!*\
-  !*** ./public/page-data/sq/d/4079294742.json ***!
-  \***********************************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = JSON.parse('{"data":{"strapiHomepage":{"seo":{"metaTitle":"Digitoimisto","metaDescription":"Digitaalinen transformaatio, verkkosivut, verkkokaupat, SaaS alustat, tietokannat, myynnin automaatio, markkinointi, ylläpito ja SOME","shareImage":{"url":"https://res.cloudinary.com/skyfall21-fi/image/upload/v1630693406/jamesbond_4705710_1280_448a87de8a.jpg"}}},"allStrapiSosiallink":{"edges":[{"node":{"href":"https://www.facebook.com/Skyfall-Agency-103541184943610","iconname":"facebook"}},{"node":{"href":"https://www.linkedin.com/company/skyfall-agency/","iconname":"linkedin"}}]},"strapiGlobal":{"Footer":{"title":"Skyfall Agency","linkbutton":{"textcontent":"Varaa aikaa Calendlyssä 30 min. ilmaiseksi/ Book the Calendly time 30 min. for free","href":"/yhteystiedot"}}}}}');
 
 /***/ }),
 

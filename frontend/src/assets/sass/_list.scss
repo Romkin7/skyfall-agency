@@ -1,0 +1,9 @@
+.list {
+  list-style: none;
+  &--item {
+    border-bottom: none;
+    a {
+      color: $black;
+    }
+  }
+}
