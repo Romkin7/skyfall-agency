@@ -18,7 +18,7 @@ const Layout = ({ children, seo }) => (
             }
           }
         }
-        allStrapiSosiallink {
+        allStrapiSociallink {
           edges {
             node {
               href
@@ -29,6 +29,14 @@ const Layout = ({ children, seo }) => (
         strapiGlobal {
           Footer {
             title
+            subtitle
+            address
+            link {
+              id
+              value
+              href
+              text
+            }
             linkbutton {
               textcontent
               href
@@ -44,7 +52,7 @@ const Layout = ({ children, seo }) => (
         <main>{children}</main>
         <Footer
           footer={data.strapiGlobal.Footer}
-          socialLinks={data.allStrapiSosiallink.edges}
+          socialLinks={data.allStrapiSociallink.edges}
         />
       </>
     )}

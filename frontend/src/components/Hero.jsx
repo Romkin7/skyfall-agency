@@ -1,10 +1,10 @@
 import React from "react";
 import LinkButton from "./LinkButton";
 
-const Hero = ({ background, title, content, link }) => {
+const Hero = ({ background, title, content, link, landing }) => {
   return (
     <section
-      className="hero mt-0 mb-5"
+      className={landing ? "hero hero--landing mt-0 mb-5" : "hero mt-0 mb-5"}
       style={{
         backgroundImage: "url(" + background + ")",
       }}

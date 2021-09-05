@@ -1,6 +1,7 @@
 .list {
   list-style: none;
   &--item {
+    background-color: transparent;
     border-bottom: none;
     a {
       color: $black;

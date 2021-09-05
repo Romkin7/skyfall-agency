@@ -14,6 +14,7 @@ const IndexPage = () => {
         title={data.strapiHomepage.Hero.title}
         content={data.strapiHomepage.Hero.content}
         link={data.strapiHomepage.Hero.link}
+        landing={true}
       />
       <section className="services my-5">
         <div className="container">

@@ -1,8 +1,13 @@
 .socialLinks {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    &--center {
+        justify-content: center;
+    }
+    &--start {
+        justify-content: flex-start;
+    }
     &--link {
         margin-left: 1rem;
     }

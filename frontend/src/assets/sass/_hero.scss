@@ -6,6 +6,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  &--landing {
+    height: 100vh;
+    background-position: 50% 50%;
+    h1 {
+      color: $orange;
+    }
+  }
   &--title {
     font-size: calc((2.8 - 1) * 1.2vw + 1rem) !important;
     line-height: 1.2992;

@@ -5,6 +5,7 @@ import List from "../components/List";
 import Form from "../components/Form";
 import Hero from "../components/Hero";
 import "../assets/sass/main.scss";
+import SocilaLinks from "../components/SocialLinks";
 
 const ContactPage = () => {
   const data = useStaticQuery(query);
@@ -23,6 +24,10 @@ const ContactPage = () => {
             <div className="col-5">
               <h2>{data.strapiContactpage.Contactinfo.title}</h2>
               <List listItemData={data.strapiContactpage.Contactinfo} />
+              <SocilaLinks
+                socialLinks={data.allStrapiSociallink.edges}
+                side="start"
+              />
             </div>
             <div className="col-7">
               <Form formData={data.strapiContactpage.Contactform} />
@@ -36,6 +41,14 @@ const ContactPage = () => {
 
 const query = graphql`
   query {
+    allStrapiSociallink {
+      edges {
+        node {
+          href
+          iconname
+        }
+      }
+    }
     strapiContactpage {
       Hero {
         title

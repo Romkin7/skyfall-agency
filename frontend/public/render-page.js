@@ -5220,7 +5220,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _LinkButton__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./LinkButton */ "./src/components/LinkButton.jsx");
+/* harmony import */ var _List__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./List */ "./src/components/List.jsx");
+/* harmony import */ var _LinkButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./LinkButton */ "./src/components/LinkButton.jsx");
+/* harmony import */ var _SocialLinks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SocialLinks */ "./src/components/SocialLinks.jsx");
+
+
 
 
 
@@ -5236,10 +5240,16 @@ const Footer = ({
     className: "row d-flex justify-content-center"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "col-12 col-md-12 footer--wrapper"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_LinkButton__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_LinkButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
     href: footer.linkbutton.href,
     textcontent: footer.linkbutton.textcontent
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, footer.title)))));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, footer.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "footer--wrapper--list"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_List__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    listItemData: footer
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_SocialLinks__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    socialLinks: socialLinks
+  }))))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Footer);
@@ -5296,10 +5306,11 @@ const Hero = ({
   background,
   title,
   content,
-  link
+  link,
+  landing
 }) => {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
-    className: "hero mt-0 mb-5",
+    className: landing ? "hero hero--landing mt-0 mb-5" : "hero mt-0 mb-5",
     style: {
       backgroundImage: "url(" + background + ")"
     }
@@ -5321,6 +5332,47 @@ const Hero = ({
 
 /***/ }),
 
+/***/ "./src/components/Icon.jsx":
+/*!*********************************!*\
+  !*** ./src/components/Icon.jsx ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const Icon = ({
+  iconName,
+  color = "black",
+  size = "md"
+}) => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: `icon icon--${color} icon--${size}`
+  }, iconName === "facebook" ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
+    fill: color,
+    className: "bi bi-facebook",
+    viewBox: "0 0 24 24"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
+    d: "M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+  })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
+    fill: color,
+    className: "bi bi-linkedin",
+    viewBox: "0 0 24 24"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
+    d: "M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Icon);
+
+/***/ }),
+
 /***/ "./src/components/Layout.jsx":
 /*!***********************************!*\
   !*** ./src/components/Layout.jsx ***!
@@ -5332,7 +5384,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _public_page_data_sq_d_1222685936_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../public/page-data/sq/d/1222685936.json */ "./public/page-data/sq/d/1222685936.json");
+/* harmony import */ var _public_page_data_sq_d_2784953068_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../public/page-data/sq/d/2784953068.json */ "./public/page-data/sq/d/2784953068.json");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
@@ -5353,14 +5405,14 @@ const Layout = ({
   children,
   seo
 }) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(gatsby__WEBPACK_IMPORTED_MODULE_3__.StaticQuery, {
-  query: "1222685936",
+  query: "2784953068",
   render: data => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement((react__WEBPACK_IMPORTED_MODULE_1___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_Seo__WEBPACK_IMPORTED_MODULE_5__["default"], {
     seo: seo
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_Nav__WEBPACK_IMPORTED_MODULE_4__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("main", null, children), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_Footer__WEBPACK_IMPORTED_MODULE_6__["default"], {
     footer: data.strapiGlobal.Footer,
-    socialLinks: data.allStrapiSosiallink.edges
+    socialLinks: data.allStrapiSociallink.edges
   })),
-  data: _public_page_data_sq_d_1222685936_json__WEBPACK_IMPORTED_MODULE_0__
+  data: _public_page_data_sq_d_2784953068_json__WEBPACK_IMPORTED_MODULE_0__
 });
 
 Layout.propTypes = {
@@ -5421,7 +5473,6 @@ __webpack_require__.r(__webpack_exports__);
 const List = ({
   listItemData
 }) => {
-  console.log(listItemData);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
     className: "list list-group list-group-flush"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ListItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -5460,9 +5511,6 @@ const ListItem = ({
   link,
   item
 }) => {
-  {
-    console.log(item);
-  }
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, link ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
     className: "list-group-item list--item"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
@@ -5669,6 +5717,43 @@ const query = "3764949129";
 
 /***/ }),
 
+/***/ "./src/components/SocialLinks.jsx":
+/*!****************************************!*\
+  !*** ./src/components/SocialLinks.jsx ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Icon */ "./src/components/Icon.jsx");
+
+
+
+const SocilaLinks = ({
+  socialLinks
+}) => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
+    className: "socialLinks"
+  }, socialLinks.map(socialLink => {
+    console.log(socialLink);
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+      href: socialLink.node.href,
+      target: "__blank"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Icon__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      iconName: socialLink.node.iconname
+    }));
+  }));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SocilaLinks);
+
+/***/ }),
+
 /***/ "./src/components/layout.jsx":
 /*!***********************************!*\
   !*** ./src/components/layout.jsx ***!
@@ -5680,7 +5765,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _public_page_data_sq_d_1222685936_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../public/page-data/sq/d/1222685936.json */ "./public/page-data/sq/d/1222685936.json");
+/* harmony import */ var _public_page_data_sq_d_2784953068_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../public/page-data/sq/d/2784953068.json */ "./public/page-data/sq/d/2784953068.json");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
@@ -5701,14 +5786,14 @@ const Layout = ({
   children,
   seo
 }) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(gatsby__WEBPACK_IMPORTED_MODULE_3__.StaticQuery, {
-  query: "1222685936",
+  query: "2784953068",
   render: data => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement((react__WEBPACK_IMPORTED_MODULE_1___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_Seo__WEBPACK_IMPORTED_MODULE_5__["default"], {
     seo: seo
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_Nav__WEBPACK_IMPORTED_MODULE_4__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("main", null, children), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_Footer__WEBPACK_IMPORTED_MODULE_6__["default"], {
     footer: data.strapiGlobal.Footer,
-    socialLinks: data.allStrapiSosiallink.edges
+    socialLinks: data.allStrapiSociallink.edges
   })),
-  data: _public_page_data_sq_d_1222685936_json__WEBPACK_IMPORTED_MODULE_0__
+  data: _public_page_data_sq_d_2784953068_json__WEBPACK_IMPORTED_MODULE_0__
 });
 
 Layout.propTypes = {
@@ -5914,7 +5999,8 @@ const IndexPage = () => {
     background: data.strapiHomepage.Hero.background,
     title: data.strapiHomepage.Hero.title,
     content: data.strapiHomepage.Hero.content,
-    link: data.strapiHomepage.Hero.link
+    link: data.strapiHomepage.Hero.link,
+    landing: true
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("section", {
     className: "services my-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
@@ -15659,17 +15745,6 @@ module.exports = require("path");
 
 /***/ }),
 
-/***/ "./public/page-data/sq/d/1222685936.json":
-/*!***********************************************!*\
-  !*** ./public/page-data/sq/d/1222685936.json ***!
-  \***********************************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = JSON.parse('{"data":{"strapiHomepage":{"Seo":{"metaTitle":"Digitoimisto","metaDescription":"Digitaalinen transformaatio, verkkosivut, verkkokaupat, SaaS alustat, tietokannat, myynnin automaatio, markkinointi, ylläpito ja SOME","shareImage":{"url":"https://res.cloudinary.com/skyfall21-fi/image/upload/v1630693406/jamesbond_4705710_1280_448a87de8a.jpg"}}},"allStrapiSosiallink":{"edges":[{"node":{"href":"https://www.facebook.com/Skyfall-Agency-103541184943610","iconname":"facebook"}},{"node":{"href":"https://www.linkedin.com/company/skyfall-agency/","iconname":"linkedin"}}]},"strapiGlobal":{"Footer":{"title":"Skyfall Agency","linkbutton":{"textcontent":"Varaa aikaa Calendlyssä 30 min. ilmaiseksi/ Book the Calendly time 30 min. for free","href":"/yhteystiedot"}}}}}');
-
-/***/ }),
-
 /***/ "./public/page-data/sq/d/1255889770.json":
 /*!***********************************************!*\
   !*** ./public/page-data/sq/d/1255889770.json ***!
@@ -15678,6 +15753,17 @@ module.exports = JSON.parse('{"data":{"strapiHomepage":{"Seo":{"metaTitle":"Digi
 
 "use strict";
 module.exports = JSON.parse('{"data":{"strapiContactpage":{"Hero":{"title":"Ota yteyttä","background":"https://res.cloudinary.com/skyfall21-fi/image/upload/v1630693406/jamesbond_4705710_1280_448a87de8a.jpg","content":"<p>Varaa aikaa, 30 min. ilmaiseksi/ Book time, 30 min. for free.</p>","link":{"href":"/palvelut","id":7,"textcontent":"Tutustu palveluihimme"}},"Contactinfo":{"title":"Yhteystiedot","subtitle":"Myynti/ Asiakaspalvelu","address":"Käyntiosoite: Valimotie 13 A, 00380, Helsinki, Finland","link":[{"id":1,"href":"tel","text":"phone: +358 40 846 56 58","value":"tel:+358408465658"},{"id":2,"href":"mailto","text":"email: skyfall@skyfall.agency","value":"mailto:skyfall@skyfall.agency"}]},"Contactform":{"services":{"values":[{"id":1,"value":"verkkokauppa","text":"Verkkokauppa"},{"id":2,"value":"verkkosivut","text":"Verkkosivut"},{"id":3,"value":"digitaalisen-transformaation-kehityshanke","text":"Digitaalisen transformaation kehityshanke"},{"id":4,"value":"graafinen-suunnittelu-ja-yritysilme","text":"Graafinen suunnittelu ja yritysilme"},{"id":5,"value":"saas-ohjelmist- ratkaisu","text":"SaaS ohjelmisto ratkaisu"},{"id":6,"value":"sähköpostimarkkinointi-suunnittelu-ja-toteutus","text":"Sähköpostimarkkinointi - suunnittelu ja toteutus"},{"id":7,"value":"some-ja-media-näkyvyys","text":"SOME ja media näkyvyys"},{"id":8,"value":"sisällöntuotanto-ja-viestintä-palvelut","text":"Sisällöntuotanto ja viestintä palvelut"},{"id":9,"value":"liikejuridiikka","text":"Liikejuridiikka"},{"id":10,"value":"muu-asia","text":"Muu asia"}]},"Inputcomponent":[{"id":10,"inputtype":"text","inputlabel":"Etunimi","htmlfor":"firstname","required":true,"disabled":false,"readonly":false,"name":"firstname"},{"id":8,"inputtype":"text","inputlabel":"Sukunimi","htmlfor":"surename","required":true,"disabled":false,"readonly":false,"name":"lastname"},{"id":12,"inputtype":"text","inputlabel":"Yritys","htmlfor":"company","required":true,"disabled":false,"readonly":false,"name":"company"},{"id":7,"inputtype":"email","inputlabel":"Email","htmlfor":"email","required":true,"disabled":false,"readonly":false,"name":"email"},{"id":11,"inputtype":"select","inputlabel":"Olen kiinnostunut","htmlfor":"service","required":true,"disabled":false,"readonly":false,"name":"service"},{"id":9,"inputtype":"textarea","inputlabel":"Viesti","htmlfor":"message","required":true,"disabled":false,"readonly":false,"name":"message"}],"Button":[{"id":1,"text":"Lähetä","type":"submit","disabled":false}]},"Seo":{"metaTitle":"Skyfall Yhteystiedot","metaDescription":"Skyfall yhteystiedot, Varaa konsultaatio-aikaa. Book a Consultation, Varaa aikaa Calendlyssä 30 min. ilmaiseksi/ Book the Calendly time 30 min. for free\\n"}}}}');
+
+/***/ }),
+
+/***/ "./public/page-data/sq/d/2784953068.json":
+/*!***********************************************!*\
+  !*** ./public/page-data/sq/d/2784953068.json ***!
+  \***********************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('{"data":{"strapiHomepage":{"Seo":{"metaTitle":"Digitoimisto","metaDescription":"Digitaalinen transformaatio, verkkosivut, verkkokaupat, SaaS alustat, tietokannat, myynnin automaatio, markkinointi, ylläpito ja SOME","shareImage":{"url":"https://res.cloudinary.com/skyfall21-fi/image/upload/v1630693406/jamesbond_4705710_1280_448a87de8a.jpg"}}},"allStrapiSociallink":{"edges":[{"node":{"href":"https://www.facebook.com/Skyfall-Agency-103541184943610","iconname":"facebook"}},{"node":{"href":"https://www.linkedin.com/company/skyfall-agency/","iconname":"linkedin"}}]},"strapiGlobal":{"Footer":{"title":"SKYFALL AGENCY","subtitle":"Myynti/ Asiakaspalvelu","address":"Käyntiosoite: Valimotie 13 A, 00380, Helsinki, Finland","link":[{"id":3,"value":"tel:+358408465658","href":"tel","text":"Phone: +358 40 846 56 58"},{"id":4,"value":"mailto:skyfall@skyfall.agency","href":"mailto","text":"Email: skyfall@skyfall.agency"}],"linkbutton":{"textcontent":"Varaa aikaa Calendlyssä 30 min. ilmaiseksi/ Book the Calendly time 30 min. for free","href":"/yhteystiedot"}}}}}');
 
 /***/ }),
 

@@ -1,5 +1,7 @@
 import React from "react";
+import List from "./List";
 import LinkButton from "./LinkButton";
+import SocilaLinks from "./SocialLinks";
 
 const Footer = ({ footer, socialLinks }) => {
   return (
@@ -12,6 +14,10 @@ const Footer = ({ footer, socialLinks }) => {
               textcontent={footer.linkbutton.textcontent}
             />
             <h2>{footer.title}</h2>
+            <div className="footer--wrapper--list">
+              <List listItemData={footer} />
+              <SocilaLinks socialLinks={socialLinks} />
+            </div>
           </div>
         </div>
       </div>
