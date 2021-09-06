@@ -13,7 +13,7 @@ const Footer = ({ footer, socialLinks }) => {
               href={footer.linkbutton.href}
               textcontent={footer.linkbutton.textcontent}
             />
-            <h2>{footer.title}</h2>
+            <h2 className="my-5">{footer.title}</h2>
             <div className="footer--wrapper--list">
               <List listItemData={footer} />
               <SocilaLinks socialLinks={socialLinks} />

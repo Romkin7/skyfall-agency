@@ -7,6 +7,7 @@ const Nav = () => (
       query {
         strapiGlobal {
           siteName
+          color
         }
         allStrapiNavitem {
           edges {
@@ -21,9 +22,14 @@ const Nav = () => (
     `}
     render={(data) => (
       <header>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark nav">
+        <nav className="navbar navbar-expand-lg navbar-dark nav">
           <div className="container-fluid">
-            <Link to="/" className="navbar-brand nav--brand">
+            <Link
+              to="/"
+              className={
+                "navbar-brand nav--brand nav--brand--" + data.strapiGlobal.color
+              }
+            >
               {data.strapiGlobal.siteName}
             </Link>
             <button
@@ -44,7 +50,13 @@ const Nav = () => (
               {data.allStrapiNavitem.edges.map((navItem) => {
                 return (
                   <li key={navItem.node.id} className="nav-item">
-                    <Link className="nav-link nav--link" to={navItem.node.href}>
+                    <Link
+                      className={
+                        "nav-link nav--link nav--link--" +
+                        data.strapiGlobal.color
+                      }
+                      to={navItem.node.href}
+                    >
                       {navItem.node.linktext}
                     </Link>
                   </li>

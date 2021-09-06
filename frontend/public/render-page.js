@@ -5242,7 +5242,9 @@ const Footer = ({
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_LinkButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
     href: footer.linkbutton.href,
     textcontent: footer.linkbutton.textcontent
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, footer.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", {
+    className: "my-5"
+  }, footer.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "footer--wrapper--list"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_List__WEBPACK_IMPORTED_MODULE_1__["default"], {
     listItemData: footer
@@ -5277,7 +5279,8 @@ const Hero = ({
   title,
   content,
   link,
-  landing
+  landing,
+  color = "white"
 }) => {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
     className: landing ? "hero hero--landing mt-0 mb-5" : "hero mt-0 mb-5",
@@ -5291,9 +5294,9 @@ const Hero = ({
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "col-12 d-flex flex-column justify-content-center align-items-center"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
-    className: "hero--title"
+    className: `hero--title hero--title--${color}`
   }, title), content && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "hero--content",
+    className: `hero--content hero--content--${color}`,
     dangerouslySetInnerHTML: {
       __html: content
     }
@@ -5510,7 +5513,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _public_page_data_sq_d_684390084_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../public/page-data/sq/d/684390084.json */ "./public/page-data/sq/d/684390084.json");
+/* harmony import */ var _public_page_data_sq_d_494425903_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../public/page-data/sq/d/494425903.json */ "./public/page-data/sq/d/494425903.json");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var gatsby__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gatsby */ "./.cache/gatsby-browser-entry.js");
@@ -5519,14 +5522,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const Nav = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(gatsby__WEBPACK_IMPORTED_MODULE_2__.StaticQuery, {
-  query: "684390084",
+  query: "494425903",
   render: data => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("header", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("nav", {
-    className: "navbar navbar-expand-lg navbar-dark bg-dark nav"
+    className: "navbar navbar-expand-lg navbar-dark nav"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
     className: "container-fluid"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(gatsby__WEBPACK_IMPORTED_MODULE_2__.Link, {
     to: "/",
-    className: "navbar-brand nav--brand"
+    className: "navbar-brand nav--brand nav--brand--" + data.strapiGlobal.color
   }, data.strapiGlobal.siteName), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("button", {
     className: "navbar-toggler",
     type: "button",
@@ -5547,11 +5550,11 @@ const Nav = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().crea
       key: navItem.node.id,
       className: "nav-item"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(gatsby__WEBPACK_IMPORTED_MODULE_2__.Link, {
-      className: "nav-link nav--link",
+      className: "nav-link nav--link nav--link--" + data.strapiGlobal.color,
       to: navItem.node.href
     }, navItem.node.linktext));
   }))))),
-  data: _public_page_data_sq_d_684390084_json__WEBPACK_IMPORTED_MODULE_0__
+  data: _public_page_data_sq_d_494425903_json__WEBPACK_IMPORTED_MODULE_0__
 });
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Nav);
@@ -15694,14 +15697,14 @@ module.exports = JSON.parse('{"data":{"strapiGlobal":{"siteName":"Skyfall Agency
 
 /***/ }),
 
-/***/ "./public/page-data/sq/d/684390084.json":
+/***/ "./public/page-data/sq/d/494425903.json":
 /*!**********************************************!*\
-  !*** ./public/page-data/sq/d/684390084.json ***!
+  !*** ./public/page-data/sq/d/494425903.json ***!
   \**********************************************/
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"data":{"strapiGlobal":{"siteName":"Skyfall Agency"},"allStrapiNavitem":{"edges":[{"node":{"strapiId":1,"href":"/palvelut","linktext":"Palvelut"}},{"node":{"strapiId":2,"href":"/yrityksille","linktext":"Yrityksille"}},{"node":{"strapiId":3,"href":"/tyopaikat","linktext":"Hakijalle"}},{"node":{"strapiId":4,"href":"/referenssit","linktext":"Referenssit"}},{"node":{"strapiId":5,"href":"/yhteystiedot","linktext":"Yhteystiedot"}}]}}}');
+module.exports = JSON.parse('{"data":{"strapiGlobal":{"siteName":"Skyfall Agency","color":"black"},"allStrapiNavitem":{"edges":[{"node":{"strapiId":1,"href":"/palvelut","linktext":"Palvelut"}},{"node":{"strapiId":2,"href":"/yrityksille","linktext":"Yrityksille"}},{"node":{"strapiId":3,"href":"/tyopaikat","linktext":"Hakijalle"}},{"node":{"strapiId":4,"href":"/referenssit","linktext":"Referenssit"}},{"node":{"strapiId":5,"href":"/yhteystiedot","linktext":"Yhteystiedot"}}]}}}');
 
 /***/ })
 

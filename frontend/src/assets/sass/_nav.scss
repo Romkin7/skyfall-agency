@@ -3,10 +3,23 @@
   width: 100%;
   z-index: 20;
   padding: 1rem 3rem;
+  background-color: transparent !important;
   &--brand {
     font-size: calc((2 - 1) * 1.2vw + 1rem);
+    &--black {
+      color: $black !important;
+    }
+    &--white {
+      color: $white !important;
+    }
   }
   &--link {
     color: $white !important;
+    &--black {
+      color: $black !important;
+    }
+    &--white {
+      color: $white !important;
+    }
   }
 }

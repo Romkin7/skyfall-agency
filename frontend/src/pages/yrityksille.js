@@ -14,6 +14,7 @@ const CompanyPage = () => {
         title={data.strapiCompanypage.Hero.title}
         content={data.strapiCompanypage.Hero.content}
         link={data.strapiCompanypage.Hero.link}
+        color="black"
       />
       <section className="services my-5">
         <div className="container">

@@ -38,6 +38,13 @@
       "repeatable": false,
       "component": "sections.footer",
       "required": true
+    },
+    "color": {
+      "type": "string",
+      "required": true,
+      "default": "black",
+      "unique": true,
+      "minLength": 3
     }
   }
 }

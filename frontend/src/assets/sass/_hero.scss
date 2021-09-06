@@ -2,7 +2,7 @@
   background-position: 20% 95%;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 25rem;
+  height: 28rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,7 +15,20 @@
   }
   &--content {
     p {
+      word-wrap: break-word;
+      font-weight: bold;
+      white-space: pre-wrap;
+      line-height: 1.8;
+      font-style: normal;
+      letter-spacing: 0em;
+      text-transform: none;
+      font-size: calc((1.1 - 1) * 1.2vw + 1rem);
       color: $white !important;
+    }
+    &--black {
+      p {
+        color: $black !important;
+      }
     }
   }
   &--title {
@@ -28,6 +41,9 @@
     text-transform: none;
     text-align: center;
     color: $white;
+    &--black {
+      color: $black;
+    }
   }
   .linkButton {
     max-width: 30%;

@@ -13,7 +13,8 @@ const EmployeePage = () => {
       <Hero
         background={data.strapiEmployeepage.Hero.background}
         content={data.strapiEmployeepage.Hero.content}
-        title={data.strapiServicepage.Hero.title}
+        title={data.strapiEmployeepage.Hero.title}
+        color="black"
       />
       <section className="positions my-5">
         <div className="container">

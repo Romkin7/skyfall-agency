@@ -23,6 +23,7 @@ module.exports = {
           `navitem`,
           `sociallink`,
           `position`,
+          `reference`,
         ],
         singleTypes: [
           `homepage`,
@@ -30,6 +31,8 @@ module.exports = {
           `servicepage`,
           `contactpage`,
           `companypage`,
+          `employeepage`,
+          `referencepage`,
         ],
         queryLimit: 1000,
       },
