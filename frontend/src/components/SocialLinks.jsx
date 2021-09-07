@@ -6,7 +6,11 @@ const SocilaLinks = ({ socialLinks, side = "center" }) => {
     <ul className={`socialLinks socialLinks--${side}`}>
       {socialLinks.map((socialLink) => {
         return (
-          <a href={socialLink.node.href} target="__blank">
+          <a
+            key={socialLink.node.iconname}
+            href={socialLink.node.href}
+            target="__blank"
+          >
             <Icon iconName={socialLink.node.iconname} />
           </a>
         );

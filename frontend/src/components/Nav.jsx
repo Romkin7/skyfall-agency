@@ -33,7 +33,6 @@ const Nav = () => {
   }, [setActive, active]);
 
   const changeBackground = () => {
-    console.log(window.scrollY);
     if (window.scrollY >= 66) {
       setBackground(() => true);
     } else {

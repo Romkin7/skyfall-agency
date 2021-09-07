@@ -15,7 +15,8 @@
 exports.ssrComponents = {
   "component---cache-dev-404-page-js": preferDefault(__webpack_require__(/*! ./.cache/dev-404-page.js */ "./.cache/dev-404-page.js")),
   "component---src-pages-404-js": preferDefault(__webpack_require__(/*! ./src/pages/404.js */ "./src/pages/404.js")),
-  "component---src-pages-index-js": preferDefault(__webpack_require__(/*! ./src/pages/index.js */ "./src/pages/index.js"))
+  "component---src-pages-index-js": preferDefault(__webpack_require__(/*! ./src/pages/index.js */ "./src/pages/index.js")),
+  "component---src-pages-yrityksille-js": preferDefault(__webpack_require__(/*! ./src/pages/yrityksille.js */ "./src/pages/yrityksille.js"))
   }
 
 
@@ -3359,7 +3360,7 @@ var plugins = [{
     "cache_busting_mode": "query",
     "crossOrigin": "anonymous",
     "include_favicon": true,
-    "cacheDigest": "28fa62e8f0df87822482c7d5ad91bed0"
+    "cacheDigest": null
   }
 }, {
   name: 'gatsby-plugin-offline',
@@ -5573,8 +5574,6 @@ const Nav = () => {
   }, [setActive, active]);
 
   const changeBackground = () => {
-    console.log(window.scrollY);
-
     if (window.scrollY >= 66) {
       setBackground(() => true);
     } else {
@@ -5789,6 +5788,7 @@ const SocilaLinks = ({
     className: `socialLinks socialLinks--${side}`
   }, socialLinks.map(socialLink => {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+      key: socialLink.node.iconname,
       href: socialLink.node.href,
       target: "__blank"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Icon__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -6067,6 +6067,62 @@ const IndexPage = () => {
 
 const query = "3012998877";
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IndexPage);
+
+/***/ }),
+
+/***/ "./src/pages/yrityksille.js":
+/*!**********************************!*\
+  !*** ./src/pages/yrityksille.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _public_page_data_sq_d_562651074_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../public/page-data/sq/d/562651074.json */ "./public/page-data/sq/d/562651074.json");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Layout */ "./src/components/Layout.jsx");
+/* harmony import */ var _components_Hero__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Hero */ "./src/components/Hero.jsx");
+/* harmony import */ var _assets_sass_main_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../assets/sass/main.scss */ "./src/assets/sass/main.scss");
+/* harmony import */ var _assets_sass_main_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_assets_sass_main_scss__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+
+const CompanyPage = () => {
+  const data = _public_page_data_sq_d_562651074_json__WEBPACK_IMPORTED_MODULE_0__.data;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    seo: data.strapiCompanypage.Seo
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_Hero__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    background: data.strapiCompanypage.Hero.background,
+    title: data.strapiCompanypage.Hero.title,
+    content: data.strapiCompanypage.Hero.content,
+    link: data.strapiCompanypage.Hero.link,
+    color: "black"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("section", {
+    className: "services my-5"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
+    className: "row d-flex justify-content-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
+    className: "col-12"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("h2", {
+    className: "my-5"
+  }, data.strapiCompanypage.Main.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
+    dangerouslySetInnerHTML: {
+      __html: data.strapiCompanypage.Main.content
+    }
+  }))))));
+};
+
+const query = "562651074";
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CompanyPage);
 
 /***/ }),
 
@@ -15774,6 +15830,17 @@ module.exports = JSON.parse('{"data":{"strapiGlobal":{"siteName":"Skyfall Agency
 
 "use strict";
 module.exports = JSON.parse('{"data":{"strapiGlobal":{"siteName":"Skyfall Agency","color":"black"},"allStrapiNavitem":{"edges":[{"node":{"strapiId":1,"href":"/palvelut","linktext":"Palvelut"}},{"node":{"strapiId":2,"href":"/yrityksille","linktext":"Yrityksille"}},{"node":{"strapiId":3,"href":"/tyopaikat","linktext":"Hakijalle"}},{"node":{"strapiId":4,"href":"/referenssit","linktext":"Referenssit"}},{"node":{"strapiId":5,"href":"/yhteystiedot","linktext":"Yhteystiedot"}}]}}}');
+
+/***/ }),
+
+/***/ "./public/page-data/sq/d/562651074.json":
+/*!**********************************************!*\
+  !*** ./public/page-data/sq/d/562651074.json ***!
+  \**********************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('{"data":{"strapiCompanypage":{"Hero":{"title":"IT osaajia meidän kautta:","background":"https://res.cloudinary.com/skyfall21-fi/image/upload/v1631027800/white_background_new_f496ed6cde.jpg","content":"<p>Voitte tehdä meidän kanssa toimeksiantosopimuksen yhdestä työntekijästä tai kokonaisesta IT hankkeesta. Meillä on Project Management, Team Lead, Full Stack, Front end, Back end, UI/UX, WordPress, Database, blockchain ja muut relevantti osaajat Suomesta ja ulkomailta. Meillä on myös julkisen rahoituksen digitaalisten hankkeiden osaamista (ELY, Business Finland).</p>"},"Main":{"title":"IT Osaajat","id":3,"content":"<p>Skyfall Agency tarjoaa osaamista suoraan Asiakkaille tai IT välitys yrityksille.</p>\\n\\n<ol>\\n<li>Tarjoamme projektijohto palvelua ja tarvittavat asiantuntijat räätälöidysti eri pituisiin ja erikokoisiin hankkeisiin.</li>\\n\\n<li>Suomen ja/ tai englanninkielen taito</li>\\n\\n<li>Frontend, backend, full stack developers, UI/UX, Wordpress kehittäjät, brändin rakentaminen, SOME markkinointi ja yhteisöjen managerointi (englanninkielisissä maissa), viestintä ja sisällöntuotanto. Tarjoamme myös palvelumuotoilua ja projektien johtamista, myös mm. digitalisaatiohankkeiden johtamista.</li>\\n</ol>"},"Seo":{"metaTitle":"Yrityksille","metaDescription":"Voitte tehdä meidän kanssa toimeksiantosopimuksen yhdestä työntekijästä tai kokonaisesta IT hankkeesta. Meillä on Project Management, Team Lead, Full Stack, Front end, Back end, UI/UX, WordPress, Database, blockchain ja muut relevantti osaajat Suomesta ja ulkomailta. Meillä on myös julkisen rahoituksen digitaalisten hankkeiden osaamista (ELY, Business Finland)."}}}}');
 
 /***/ })
 
