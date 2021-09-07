@@ -9,8 +9,10 @@
   &--landing {
     height: 100vh;
     background-position: 50% 50%;
-    h1 {
-      color: $orange;
+    justify-content: center;
+    align-items: flex-end;
+    a {
+      margin-bottom: 4rem;
     }
   }
   &--content {

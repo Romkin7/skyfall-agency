@@ -3,7 +3,9 @@
   width: 100%;
   z-index: 20;
   padding: 1rem 3rem;
-  background-color: transparent !important;
+  &--transparent {
+    background-color: transparent !important;
+  }
   &--brand {
     font-size: calc((2 - 1) * 1.2vw + 1rem);
     &--black {
@@ -20,6 +22,9 @@
     }
     &--white {
       color: $white !important;
+    }
+    &--active {
+      border-bottom: 2px solid $black;
     }
   }
 }

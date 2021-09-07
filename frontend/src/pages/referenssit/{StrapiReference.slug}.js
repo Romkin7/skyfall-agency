@@ -35,20 +35,10 @@ const OneReferencePage = ({ data }) => {
   return (
     <Layout seo={seo}>
       <Hero title={reference.title} color="black" />
-      <section>
+      <section className="my-5">
         <div className="container">
           <div className="row d-flex justify-content-center">
             <div className="col-12">
-              <GatsbyImage
-                style={{
-                  gridArea: "1/1",
-                }}
-                alt={`Picture for ${reference.title} reference`}
-                image={
-                  reference.image.localFile.childImageSharp.gatsbyImageData
-                }
-                layout="fullWidth"
-              />
               <Markdown source={reference.content} escapeHtml={false} />
             </div>
           </div>
