@@ -12,8 +12,8 @@
   "devDependencies": {},
   "dependencies": {
     "knex": "0.21.18",
-    "mime-types": "^2.1.27",
-    "pg": "^8.7.1",
+    "mime-types": "2.1.27",
+    "pg": "8.7.1",
     "sqlite3": "5.0.0",
     "strapi": "3.6.8",
     "strapi-admin": "3.6.8",
@@ -25,7 +25,7 @@
     "strapi-plugin-i18n": "3.6.8",
     "strapi-plugin-upload": "3.6.8",
     "strapi-plugin-users-permissions": "3.6.8",
-    "strapi-provider-upload-cloudinary": "^3.6.8",
+    "strapi-provider-upload-cloudinary": "3.6.8",
     "strapi-utils": "3.6.8"
   },
   "author": {
