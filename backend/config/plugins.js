@@ -1,11 +1,24 @@
+// module.exports = ({ env }) => ({
+//   upload: {
+//     provider: "cloudinary",
+//     providerOptions: {
+//       cloud_name: env("CLOUDINARY_NAME"),
+//       api_key: env("CLOUDINARY_API_KEY"),
+//       api_secret: env("CLOUDINARY_API_SECRET"),
+//     },
+//   },
+// });
+
 module.exports = ({ env }) => ({
   upload: {
-    provider: "cloudinary",
+    provider: "aws-s3",
     providerOptions: {
-      cloud_name: env("CLOUDINARY_NAME"),
-      api_key: env("CLOUDINARY_API_KEY"),
-      api_secret: env("CLOUDINARY_API_SECRET"),
+      accessKeyId: env("AWS_ACCESS_KEY_ID"),
+      secretAccessKey: env("AWS_ACCESS_SECRET"),
+      region: env("AWS_REGION"),
+      params: {
+        Bucket: env("AWS_BUCKET_NAME"),
+      },
     },
   },
 });
- 
