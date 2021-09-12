@@ -1,9 +1,8 @@
 {
   "collectionName": "components_shared_linkbuttons",
   "info": {
-    "name": "linkbutton",
-    "icon": "arrow-alt-circle-right",
-    "description": ""
+    "name": "Linkbutton",
+    "icon": "angle-right"
   },
   "options": {},
   "attributes": {

@@ -2,8 +2,7 @@
   "kind": "collectionType",
   "collectionName": "services",
   "info": {
-    "name": "service",
-    "description": ""
+    "name": "Service"
   },
   "options": {
     "increments": true,
@@ -24,8 +23,8 @@
       },
       "type": "string",
       "required": true,
-      "maxLength": 40,
-      "unique": true
+      "unique": true,
+      "minLength": 3
     },
     "description": {
       "pluginOptions": {
@@ -35,7 +34,7 @@
       },
       "type": "text",
       "required": true,
-      "minLength": 10
+      "minLength": 5
     },
     "image": {
       "model": "file",

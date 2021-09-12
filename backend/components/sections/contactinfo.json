@@ -1,14 +1,16 @@
 {
-  "collectionName": "components_shared_contactinfos",
+  "collectionName": "components_sections_contactinfos",
   "info": {
     "name": "Contactinfo",
-    "icon": "id-card",
+    "icon": "film",
     "description": ""
   },
   "options": {},
   "attributes": {
     "address": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "minLength": 3
     },
     "link": {
       "type": "component",
@@ -23,7 +25,7 @@
     },
     "subtitle": {
       "type": "string",
-      "minLength": 2
+      "minLength": 3
     }
   }
 }

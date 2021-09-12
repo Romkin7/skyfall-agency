@@ -2,7 +2,7 @@
   "collectionName": "components_shared_buttons",
   "info": {
     "name": "Button",
-    "icon": "audio-description"
+    "icon": "arrow-alt-circle-down"
   },
   "options": {},
   "attributes": {
@@ -18,8 +18,8 @@
         "submit",
         "reset"
       ],
-      "default": "submit",
-      "required": true
+      "required": true,
+      "default": "submit"
     },
     "disabled": {
       "type": "boolean",

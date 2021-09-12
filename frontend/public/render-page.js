@@ -15,7 +15,8 @@
 exports.ssrComponents = {
   "component---cache-dev-404-page-js": preferDefault(__webpack_require__(/*! ./.cache/dev-404-page.js */ "./.cache/dev-404-page.js")),
   "component---src-pages-404-js": preferDefault(__webpack_require__(/*! ./src/pages/404.js */ "./src/pages/404.js")),
-  "component---src-pages-index-js": preferDefault(__webpack_require__(/*! ./src/pages/index.js */ "./src/pages/index.js"))
+  "component---src-pages-index-js": preferDefault(__webpack_require__(/*! ./src/pages/index.js */ "./src/pages/index.js")),
+  "component---src-pages-tyopaikat-js": preferDefault(__webpack_require__(/*! ./src/pages/tyopaikat.js */ "./src/pages/tyopaikat.js"))
   }
 
 
@@ -3359,7 +3360,7 @@ var plugins = [{
     "cache_busting_mode": "query",
     "crossOrigin": "anonymous",
     "include_favicon": true,
-    "cacheDigest": null
+    "cacheDigest": "1136d014f0f3c11b14f57d5e2dd0436d"
   }
 }, {
   name: 'gatsby-plugin-offline',
@@ -5267,8 +5268,8 @@ const Footer = ({
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "col-12 col-md-12 footer--wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_LinkButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    href: footer.linkbutton.href,
-    textcontent: footer.linkbutton.textcontent
+    href: footer.Linkbutton.href,
+    textcontent: footer.Linkbutton.textcontent
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", {
     className: "my-5"
   }, footer.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -5389,7 +5390,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _public_page_data_sq_d_2784953068_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../public/page-data/sq/d/2784953068.json */ "./public/page-data/sq/d/2784953068.json");
+/* harmony import */ var _public_page_data_sq_d_3831112233_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../public/page-data/sq/d/3831112233.json */ "./public/page-data/sq/d/3831112233.json");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
@@ -5410,14 +5411,14 @@ const Layout = ({
   children,
   seo
 }) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(gatsby__WEBPACK_IMPORTED_MODULE_3__.StaticQuery, {
-  query: "2784953068",
+  query: "3831112233",
   render: data => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement((react__WEBPACK_IMPORTED_MODULE_1___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_Seo__WEBPACK_IMPORTED_MODULE_5__["default"], {
     seo: seo
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_Nav__WEBPACK_IMPORTED_MODULE_4__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("main", null, children), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_Footer__WEBPACK_IMPORTED_MODULE_6__["default"], {
     footer: data.strapiGlobal.Footer,
     socialLinks: data.allStrapiSociallink.edges
   })),
-  data: _public_page_data_sq_d_2784953068_json__WEBPACK_IMPORTED_MODULE_0__
+  data: _public_page_data_sq_d_3831112233_json__WEBPACK_IMPORTED_MODULE_0__
 });
 
 Layout.propTypes = {
@@ -5628,6 +5629,42 @@ const Nav = () => {
 
 /***/ }),
 
+/***/ "./src/components/Position.jsx":
+/*!*************************************!*\
+  !*** ./src/components/Position.jsx ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const Position = ({
+  position
+}) => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "row d-flex my-5"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "col-12 col-md-5"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, position.title)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "col-12 col-md-7"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "position",
+    dangerouslySetInnerHTML: {
+      __html: position.description
+    }
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Position);
+
+/***/ }),
+
 /***/ "./src/components/Seo.jsx":
 /*!********************************!*\
   !*** ./src/components/Seo.jsx ***!
@@ -5811,7 +5848,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _public_page_data_sq_d_2784953068_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../public/page-data/sq/d/2784953068.json */ "./public/page-data/sq/d/2784953068.json");
+/* harmony import */ var _public_page_data_sq_d_3831112233_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../public/page-data/sq/d/3831112233.json */ "./public/page-data/sq/d/3831112233.json");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
@@ -5832,14 +5869,14 @@ const Layout = ({
   children,
   seo
 }) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(gatsby__WEBPACK_IMPORTED_MODULE_3__.StaticQuery, {
-  query: "2784953068",
+  query: "3831112233",
   render: data => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement((react__WEBPACK_IMPORTED_MODULE_1___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_Seo__WEBPACK_IMPORTED_MODULE_5__["default"], {
     seo: seo
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_Nav__WEBPACK_IMPORTED_MODULE_4__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("main", null, children), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_Footer__WEBPACK_IMPORTED_MODULE_6__["default"], {
     footer: data.strapiGlobal.Footer,
     socialLinks: data.allStrapiSociallink.edges
   })),
-  data: _public_page_data_sq_d_2784953068_json__WEBPACK_IMPORTED_MODULE_0__
+  data: _public_page_data_sq_d_3831112233_json__WEBPACK_IMPORTED_MODULE_0__
 });
 
 Layout.propTypes = {
@@ -6068,6 +6105,62 @@ const IndexPage = () => {
 
 const query = "3012998877";
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IndexPage);
+
+/***/ }),
+
+/***/ "./src/pages/tyopaikat.js":
+/*!********************************!*\
+  !*** ./src/pages/tyopaikat.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _public_page_data_sq_d_3901743628_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../public/page-data/sq/d/3901743628.json */ "./public/page-data/sq/d/3901743628.json");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Layout */ "./src/components/Layout.jsx");
+/* harmony import */ var _components_Hero__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Hero */ "./src/components/Hero.jsx");
+/* harmony import */ var _components_Position__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Position */ "./src/components/Position.jsx");
+/* harmony import */ var _assets_sass_main_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../assets/sass/main.scss */ "./src/assets/sass/main.scss");
+/* harmony import */ var _assets_sass_main_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_assets_sass_main_scss__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+
+
+
+const EmployeePage = () => {
+  const data = _public_page_data_sq_d_3901743628_json__WEBPACK_IMPORTED_MODULE_0__.data;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    seo: data.strapiEmployeepage.Seo
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_Hero__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    background: data.strapiEmployeepage.Hero.background,
+    content: data.strapiEmployeepage.Hero.content,
+    title: data.strapiEmployeepage.Hero.title,
+    color: "black"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("section", {
+    className: "positions my-5"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
+    className: "row d-flex justify-content-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
+    className: "col-12"
+  }, data.allStrapiPosition.edges.map(postion => {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_Position__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      key: postion.node.id,
+      position: postion.node
+    });
+  }))))));
+};
+
+const query = "3901743628";
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (EmployeePage);
 
 /***/ }),
 
@@ -15691,24 +15784,24 @@ module.exports = str => encodeURIComponent(str).replace(/[!'()*]/g, x => `%${x.c
 /***/ }),
 
 /***/ "react-dom/server":
-/*!********************************************************************************************************************!*\
-  !*** external "/Users/romantuomisto/Desktop/development/skyfall-agency/frontend/node_modules/react-dom/server.js" ***!
-  \********************************************************************************************************************/
+/*!********************************************************************************************************!*\
+  !*** external "/Users/romantuomisto/Desktop/skyfall-agency/frontend/node_modules/react-dom/server.js" ***!
+  \********************************************************************************************************/
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("/Users/romantuomisto/Desktop/development/skyfall-agency/frontend/node_modules/react-dom/server.js");
+module.exports = require("/Users/romantuomisto/Desktop/skyfall-agency/frontend/node_modules/react-dom/server.js");
 
 /***/ }),
 
 /***/ "react":
-/*!***************************************************************************************************************!*\
-  !*** external "/Users/romantuomisto/Desktop/development/skyfall-agency/frontend/node_modules/react/index.js" ***!
-  \***************************************************************************************************************/
+/*!***************************************************************************************************!*\
+  !*** external "/Users/romantuomisto/Desktop/skyfall-agency/frontend/node_modules/react/index.js" ***!
+  \***************************************************************************************************/
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("/Users/romantuomisto/Desktop/development/skyfall-agency/frontend/node_modules/react/index.js");
+module.exports = require("/Users/romantuomisto/Desktop/skyfall-agency/frontend/node_modules/react/index.js");
 
 /***/ }),
 
@@ -15734,17 +15827,6 @@ module.exports = require("path");
 
 /***/ }),
 
-/***/ "./public/page-data/sq/d/2784953068.json":
-/*!***********************************************!*\
-  !*** ./public/page-data/sq/d/2784953068.json ***!
-  \***********************************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = JSON.parse('{"data":{"strapiHomepage":{"Seo":{"metaTitle":"Digitoimisto","metaDescription":"Digitaalinen transformaatio, verkkosivut, verkkokaupat, SaaS alustat, tietokannat, myynnin automaatio, markkinointi, ylläpito ja SOME","shareImage":{"url":"https://res.cloudinary.com/skyfall21-fi/image/upload/v1631035229/skyfall_main_bg_2c3704aac5.png"}}},"allStrapiSociallink":{"edges":[{"node":{"href":"https://www.facebook.com/Skyfall-Agency-103541184943610","iconname":"facebook"}},{"node":{"href":"https://www.linkedin.com/company/skyfall-agency/","iconname":"linkedin"}}]},"strapiGlobal":{"Footer":{"title":"SKYFALL AGENCY","subtitle":"Myynti/ Asiakaspalvelu","address":"Käyntiosoite: Valimotie 13 A, 00380, Helsinki, Finland","link":[{"id":3,"value":"tel:+358408465658","href":"tel","text":"Phone: +358 40 846 56 58"},{"id":4,"value":"mailto:skyfall@skyfall.agency","href":"mailto","text":"Email: skyfall@skyfall.agency"}],"linkbutton":{"textcontent":"Varaa aikaa Calendlyssä 30 min. ilmaiseksi/ Book the Calendly time 30 min. for free","href":"/yhteystiedot"}}}}}');
-
-/***/ }),
-
 /***/ "./public/page-data/sq/d/3012998877.json":
 /*!***********************************************!*\
   !*** ./public/page-data/sq/d/3012998877.json ***!
@@ -15752,7 +15834,7 @@ module.exports = JSON.parse('{"data":{"strapiHomepage":{"Seo":{"metaTitle":"Digi
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"data":{"strapiHomepage":{"Hero":{"title":"Digitoimisto","background":"https://res.cloudinary.com/skyfall21-fi/image/upload/v1631035229/skyfall_main_bg_2c3704aac5.png","content":"<p>Digitaalinen transformaatio, verkkosivut, verkkokaupat, SaaS alustat, tietokannat, myynnin automaatio, markkinointi, ylläpito ja SOME</p>","link":{"href":"/yteystiedot","id":6,"textcontent":"Varaa konsultaatio-aikaa. Book a Consultation"}},"Main":{"title":"Ohjelmistojen kehityspalvelu, kreatiivinen markkinointitoimisto ja henkilöstövuokrausta ja IT alihankintaa","id":2,"content":"<p>Skyfall Agency on kreatiivinen kansainvälinen yritys, joka toteuttaa digitaalisia ja liiketoiminnallisia ratkaisuja Asiakkaiden tarpeiden mukaan.</p>\\n\\n<h3>Ratkaisumme</h3>\\n\\n<ul>\\n<li>Ohjelmistojen suunnittelu ja valmistus</li>\\n\\n<li>Verkkosovellusten ja mobiilisovellusten valmistus</li>\\n\\n<li>Henkilöstövuokraus, alihankinta, outstaffing</li>\\n\\n<li>WordPress verkkosivut</li>\\n\\n<li>Oman alustan verkkosivut</li>\\n\\n<li>Verkkokaupat ja verkkopalvelut</li>\\n\\n<li>Digitaalisen transformaation projektien toteutus</li>\\n\\n<li>Julkisen rahoituksen projektien johtaminen ja kehittäminen</li>\\n\\n<li>AI, Big Data, SaaS ratkaisut</li>\\n\\n<li>Graafinen suunnittelu, brand design, etikettisuunnittelu</li>\\n\\n<li>Sähköpostimarkkinointi suunnittelu, analysointi ja kehittäminen</li>\\n\\n<li>Sisällöntuotanto</li>\\n\\n<li>Englanninkieliset SOME kampanjat, SOME yhteisöjen hallinta viennissä ja kansainvälisillä markkinoilla</li>\\n</ul>\\n\\n<p>Kansainvälinen brändien PR ja buustaus palvelut</p>"},"Seo":{"metaTitle":"Digitoimisto","metaDescription":"Digitaalinen transformaatio, verkkosivut, verkkokaupat, SaaS alustat, tietokannat, myynnin automaatio, markkinointi, ylläpito ja SOME"}}}}');
+module.exports = JSON.parse('{"data":{"strapiHomepage":{"Hero":{"title":"Digitoimisto","background":"https://skyfall-agency-images.s3.eu-central-1.amazonaws.com/skyfall_main_bg_cdbf4c82f8.png","content":"<p>Digitaalinen transformaatio, verkkosivut, verkkokaupat, SaaS alustat, tietokannat, myynnin automaatio, markkinointi, ylläpito ja SOME</p>","link":{"href":"/yteystiedot","id":3,"textcontent":"Varaa konsultaatio-aikaa. Book a Consultation"}},"Main":{"title":"Ohjelmistojen kehityspalvelu, kreatiivinen markkinointitoimisto ja henkilöstövuokrausta ja IT alihankintaa","id":3,"content":"<p>Skyfall Agency on kreatiivinen kansainvälinen yritys, joka toteuttaa digitaalisia ja liiketoiminnallisia ratkaisuja Asiakkaiden tarpeiden mukaan.</p>\\n\\n<h3>Ratkaisumme</h3>\\n\\n<ul>\\n<li>Ohjelmistojen suunnittelu ja valmistus</li>\\n\\n<li>Verkkosovellusten ja mobiilisovellusten valmistus</li>\\n\\n<li>Henkilöstövuokraus, alihankinta, outstaffing</li>\\n\\n<li>WordPress verkkosivut</li>\\n\\n<li>Oman alustan verkkosivut</li>\\n\\n<li>Verkkokaupat ja verkkopalvelut</li>\\n\\n<li>Digitaalisen transformaation projektien toteutus</li>\\n\\n<li>Julkisen rahoituksen projektien johtaminen ja kehittäminen</li>\\n\\n<li>AI, Big Data, SaaS ratkaisut</li>\\n\\n<li>Graafinen suunnittelu, brand design, etikettisuunnittelu</li>\\n\\n<li>Sähköpostimarkkinointi suunnittelu, analysointi ja kehittäminen</li>\\n\\n<li>Sisällöntuotanto</li>\\n\\n<li>Englanninkieliset SOME kampanjat, SOME yhteisöjen hallinta viennissä ja kansainvälisillä markkinoilla</li>\\n</ul>\\n\\n<p>Kansainvälinen brändien PR ja buustaus palvelut</p>"},"Seo":{"metaTitle":"Digitoimisto","metaDescription":"Digitaalinen transformaatio, verkkosivut, verkkokaupat, SaaS alustat, tietokannat, myynnin automaatio, markkinointi, ylläpito ja SOME"}}}}');
 
 /***/ }),
 
@@ -15763,7 +15845,29 @@ module.exports = JSON.parse('{"data":{"strapiHomepage":{"Hero":{"title":"Digitoi
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"data":{"strapiGlobal":{"siteName":"Skyfall Agency","favicon":{"url":"https://res.cloudinary.com/skyfall21-fi/image/upload/v1631037007/favicon_c52c369a08.ico"},"defaultSeo":{"metaTitle":"Digitoimisto","metaDescription":"Skyfall Agency - Digitoimisto","shareImage":{"url":"https://res.cloudinary.com/skyfall21-fi/image/upload/v1631035229/skyfall_main_bg_2c3704aac5.png"}}}}}');
+module.exports = JSON.parse('{"data":{"strapiGlobal":{"siteName":"Skyfall Agency","favicon":{"url":"https://skyfall-agency-images.s3.eu-central-1.amazonaws.com/favicon_ada54ae72b.ico"},"defaultSeo":{"metaTitle":"Digitoimisto","metaDescription":"Skyfall Agency - Digitoimisto","shareImage":{"url":"https://skyfall-agency-images.s3.eu-central-1.amazonaws.com/skyfall_main_bg_cdbf4c82f8.png"}}}}}');
+
+/***/ }),
+
+/***/ "./public/page-data/sq/d/3831112233.json":
+/*!***********************************************!*\
+  !*** ./public/page-data/sq/d/3831112233.json ***!
+  \***********************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('{"data":{"strapiHomepage":{"Seo":{"metaTitle":"Digitoimisto","metaDescription":"Digitaalinen transformaatio, verkkosivut, verkkokaupat, SaaS alustat, tietokannat, myynnin automaatio, markkinointi, ylläpito ja SOME","shareImage":{"url":"https://skyfall-agency-images.s3.eu-central-1.amazonaws.com/skyfall_main_bg_cdbf4c82f8.png"}}},"allStrapiSociallink":{"edges":[{"node":{"href":"https://www.facebook.com/Skyfall-Agency-103541184943610","iconname":"facebook"}},{"node":{"href":"https://www.linkedin.com/company/skyfall-agency/","iconname":"linkedin"}}]},"strapiGlobal":{"Footer":{"title":"SKYFALL AGENCY","subtitle":"Myynti/ Asiakaspalvelu","address":"Käyntiosoite: Valimotie 13 A, 00380, Helsinki, Finland","link":[{"id":3,"value":"tel:+358408465658","href":"tel","text":"Phone: +358 40 846 56 58"},{"id":4,"value":"mailto:skyfall@skyfall.agency","href":"mailto","text":"Email: skyfall@skyfall.agency"}],"Linkbutton":{"textcontent":"Varaa aikaa Calendlyssä 30 min. ilmaiseksi/ Book the Calendly time 30 min. for free","href":"/yhteystiedot"}}}}}');
+
+/***/ }),
+
+/***/ "./public/page-data/sq/d/3901743628.json":
+/*!***********************************************!*\
+  !*** ./public/page-data/sq/d/3901743628.json ***!
+  \***********************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('{"data":{"strapiEmployeepage":{"Hero":{"title":"Kevytyrittäjä, työtön, freelancer, yrittäjä, jätä CV","content":"<p>Meille kannattaa jättää oma CV ja tuntihinnan, sillä me jatkuvasti etsimme työmahdollisuuksia teille ja myös hyviä osaajia.\\n\\nAlempana eniten kysytyt tehtävät:</p>","background":"https://skyfall-agency-images.s3.eu-central-1.amazonaws.com/white_background_new_9a42cf823d.jpg"},"Seo":{"metaTitle":"Kevytyrittäjä, työtön, freelancer, yrittäjä, jätä CV","metaDescription":"Meille kannattaa jättää oma CV ja tuntihinnan, sillä me jatkuvasti etsimme työmahdollisuuksia teille ja myös hyviä osaajia."}},"allStrapiPosition":{"edges":[{"node":{"strapiId":1,"slug":"ux-ui-ohjelmistokehittaejaeae","title":"UX/UI ohjelmistokehittäjää","description":"<p>Skyfall Agency on nuori digitoimisto, joka on aloittanut toimintansa 2020 ja jonka pääyhtiö on Phoenix General Oy.</p>\\n\\n<p>Skyfall Agency on moderni kansainvälinen digitalo, joka tarjoaa laajan skaalan ratkaisuja: WordPress ja muiden alustojen, sekä oman alustan verkkosivut, verkkokaupat, mobiili ja verkkosovellukset, ohjelmistot, tietokannat, automatisoidut työkalut, graafista designia, palvelumuotoilua, brändin suunnittelua, viestintää ja sisällöntuotantoa.</p>\\n\\n<p>Skyfall Agency toteuttaa digitaalisen transformaation hankkeita, ja on osaava kansainvälistämisen ja kasvun konsulttiyhtiö. Kaikki meidän IT ja digihankkeet tehdään liiketoiminnallisesta ja toiminnallisesta näkökulmasta.</p>\\n\\n<p>Nyt haetaan jatkuvasti software development UX/UI</p>\\n\\n<p><em>Tehtävät:</em></p>\\n\\n<p>Software Development/ Ohjelmistokehittäjä: UX/UI</p>\\n\\n<p><em>Vaatimukset:</em></p>\\n\\n<ul>\\n<li>Kokemus UX/UI suunnittelusta vähintään 5 vuoden kokemusta</li>\\n\\n<li>Kokemus web-applikaatioiden suunnittelusta, vähintään 2 vuoden kokemusta</li>\\n</ul>\\n\\n<p><em>Kielitaito:</em> suomi äidinkieli, muut kielet plussa</p>\\n\\n<p><em>Aloitus:</em> kun löydetään sopiva henkilö</p>\\n\\n<p>Hakemukset: <a href=\\"mailto:ivan@phornix-general.com\\">ivan@phoenix-general.com</a></p>"}},{"node":{"strapiId":2,"slug":"frontend-developer","title":"Frontend developer","description":"<p>Skyfall Agency on nuori digitoimisto, joka on aloittanut toimintansa 2020 ja jonka pääyhtiö on Phoenix General Oy.</p>\\n\\n<p>Skyfall Agency on moderni kansainvälinen digitalo, joka tarjoaa laajan skaalan ratkaisuja: WordPress ja muiden alustojen, sekä oman alustan verkkosivut, verkkokaupat, mobiili ja verkkosovellukset, ohjelmistot, tietokannat, automatisoidut työkalut, graafista designia, palvelumuotoilua, brändin suunnittelua, viestintää ja sisällöntuotantoa.</p>\\n\\n<p>Skyfall Agency toteuttaa digitaalisen transformaation hankkeita, ja on osaava kansainvälistämisen ja kasvun konsulttiyhtiö. Kaikki meidän IT ja digihankkeet tehdään liiketoiminnallisesta ja toiminnallisesta näkökulmasta.</p>\\n\\n<p>Nyt haetaan jatkuvasti Frontend software development osaajaa (osaajia)</p>\\n\\n<p><em>Tehtävät:</em></p>\\n\\n<p>Frontend Software Development</p>\\n\\n<p><em>Vaatimukset:</em></p>\\n\\n<ul>\\n<li>Kokemus ohjelmoinnista vähintään 5 vuotta</li>\\n\\n<li>Kokemus web-teknologioista, vähintään 2 vuotta</li>\\n\\n<li>Kokemusta React frameworkistä, vähintään vuoden</li>\\n\\n<li>Kokemusta Google Cloud Platform</li>\\n</ul>\\n\\n<p><em>Kielitaito:</em> suomi äidinkieli, muut kielet plussa</p>\\n\\n<p><em>Aloitus:</em> kun löydetään sopiva henkilö</p>\\n\\n<p>Hakemukset: <a href=\\"mailto:ivan@phoenix-general.com\\">ivan@phoenix-general.com</a></p>"}},{"node":{"strapiId":3,"slug":"projektipaeaellikkoe","title":"Projektipäällikkö","description":"<p>Skyfall Agency on nuori digitoimisto, joka on aloittanut toimintansa 2020 ja jonka pääyhtiö on Phoenix General Oy.</p>\\n\\n<p>Skyfall Agency on moderni kansainvälinen digitalo, joka tarjoaa laajan skaalan ratkaisuja: WordPress ja muiden alustojen, sekä oman alustan verkkosivut, verkkokaupat, mobiili ja verkkosovellukset, ohjelmistot, tietokannat, automatisoidut työkalut, graafista designia, palvelumuotoilua, brändin suunnittelua, viestintää ja sisällöntuotantoa.</p> \\n\\n<p>Skyfall Agency toteuttaa digitaalisen transformaation hankkeita, ja on osaava kansainvälistämisen ja kasvun konsulttiyhtiö. Kaikki meidän IT ja digihankkeet tehdään liiketoiminnallisesta ja toiminnallisesta näkökulmasta.</p>\\n\\n<p>Nyt haetaan kasvun varmistamiseksi aluksi määrä-aikaista ja myöhemmin pidempi-aikaista Myyjää/ Projektipäällikköä.</p>\\n\\n<p><em>Tehtävät:</em></p>\\n\\n<p>Asiakashankinta ja projektien johtaminen</p>\\n\\n<p><em>Vaatimukset:</em></p>\\n\\n<p>Voit olla harjoittelija, konsultti/ kevytyrittäjä tai osa-aikainen työntekijä. Sinulla pitää olla mielellään osaamista tai ymmärrystä IT projekteista, myynnistä tai asiakashankinnasta, asiakaspalvelusta tai liiketoiminnan kehittämisestä. Kokemusta WordPress tai vastaavista alustoista on hyödyksi. Kokemusta ohjelmoinnista tai viestinnästä tai palvelumuotoilusta, tai graafisesta suunnittelusta - plussa.</p>\\n\\n<p><em>Kielitaito:</em> suomi äidinkieli, muut kielet plussa</p>\\n\\n<p><em>Aloitus:</em> kun löydetään sopiva henkilö</p>\\n\\n<p>Hakemukset: <a href=\\"mailto:ivan@phoenix-general.com\\">ivan@phoenix-general.com</a></p> "}}]}}}');
 
 /***/ }),
 

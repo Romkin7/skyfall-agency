@@ -31,7 +31,7 @@ module.exports = ({ env }) => ({
         password: env("DATABASE_PASSWORD", "Skyfall2021!"),
       },
       options: {
-        ssl: false,
+        ssl: false
       },
     },
   },

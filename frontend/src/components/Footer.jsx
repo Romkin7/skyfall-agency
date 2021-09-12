@@ -10,8 +10,8 @@ const Footer = ({ footer, socialLinks }) => {
         <div className="row d-flex justify-content-center">
           <div className="col-12 col-md-12 footer--wrapper">
             <LinkButton
-              href={footer.linkbutton.href}
-              textcontent={footer.linkbutton.textcontent}
+              href={footer.Linkbutton.href}
+              textcontent={footer.Linkbutton.textcontent}
             />
             <h2 className="my-5">{footer.title}</h2>
             <div className="footer--wrapper--list">

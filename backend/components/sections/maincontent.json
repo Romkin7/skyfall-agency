@@ -2,13 +2,14 @@
   "collectionName": "components_sections_maincontents",
   "info": {
     "name": "Maincontent",
-    "icon": "align-justify"
+    "icon": "clipboard"
   },
   "options": {},
   "attributes": {
     "title": {
       "type": "string",
-      "required": true
+      "required": true,
+      "minLength": 3
     },
     "content": {
       "type": "richtext",

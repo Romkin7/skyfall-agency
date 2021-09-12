@@ -2,8 +2,7 @@
   "collectionName": "components_sections_contactforms",
   "info": {
     "name": "Contactform",
-    "icon": "file-contract",
-    "description": ""
+    "icon": "closed-captioning"
   },
   "options": {},
   "attributes": {
@@ -14,7 +13,7 @@
     "Inputcomponent": {
       "type": "component",
       "repeatable": true,
-      "component": "shared.input",
+      "component": "shared.inputcomponent",
       "required": true
     },
     "Button": {

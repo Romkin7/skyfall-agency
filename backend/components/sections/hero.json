@@ -1,28 +1,29 @@
 {
-  "collectionName": "components_decoration_heroes",
+  "collectionName": "components_sections_heroes",
   "info": {
     "name": "Hero",
-    "icon": "address-card",
+    "icon": "boxes",
     "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
       "type": "string",
-      "required": true
+      "required": true,
+      "minLength": 3
+    },
+    "background": {
+      "type": "string"
     },
     "content": {
-      "type": "richtext"
+      "type": "richtext",
+      "minLength": 5
     },
     "link": {
       "type": "component",
       "repeatable": false,
       "component": "shared.linkbutton",
       "required": false
-    },
-    "background": {
-      "type": "string",
-      "private": false
     }
   }
 }

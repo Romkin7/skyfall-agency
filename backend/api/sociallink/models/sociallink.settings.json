@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "sociallinks",
   "info": {
-    "name": "sociallink"
+    "name": "Sociallink"
   },
   "options": {
     "increments": true,
@@ -32,9 +32,9 @@
         }
       },
       "type": "string",
-      "unique": true,
       "required": true,
-      "minLength": 3
+      "unique": true,
+      "minLength": 2
     }
   }
 }

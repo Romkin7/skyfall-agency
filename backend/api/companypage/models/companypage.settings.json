@@ -2,7 +2,7 @@
   "kind": "singleType",
   "collectionName": "companypages",
   "info": {
-    "name": "companypage"
+    "name": "Companypage"
   },
   "options": {
     "increments": true,
@@ -28,7 +28,7 @@
     },
     "Main": {
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "pluginOptions": {
         "i18n": {
           "localized": true

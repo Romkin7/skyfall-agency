@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "prices",
   "info": {
-    "name": "price"
+    "name": "Price"
   },
   "options": {
     "increments": true,
@@ -22,9 +22,9 @@
         }
       },
       "type": "string",
-      "required": true,
-      "maxLength": 50,
-      "unique": true
+      "unique": true,
+      "minLength": 3,
+      "required": true
     },
     "content": {
       "pluginOptions": {
@@ -56,7 +56,8 @@
         }
       },
       "type": "string",
-      "required": true
+      "required": true,
+      "minLength": 3
     },
     "slug": {
       "pluginOptions": {

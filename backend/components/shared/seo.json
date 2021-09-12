@@ -2,7 +2,7 @@
   "collectionName": "components_shared_seos",
   "info": {
     "name": "Seo",
-    "icon": "allergies"
+    "icon": "ad"
   },
   "options": {},
   "attributes": {
@@ -21,7 +21,8 @@
         "images"
       ],
       "plugin": "upload",
-      "required": false
+      "required": false,
+      "pluginOptions": {}
     }
   }
 }

@@ -2,7 +2,7 @@
   "kind": "singleType",
   "collectionName": "employeepages",
   "info": {
-    "name": "employeepage"
+    "name": "Employeepage"
   },
   "options": {
     "increments": true,

@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "navitems",
   "info": {
-    "name": "navitem"
+    "name": "Navitem"
   },
   "options": {
     "increments": true,
@@ -22,6 +22,7 @@
         }
       },
       "type": "string",
+      "minLength": 3,
       "required": true
     },
     "linktext": {
@@ -31,7 +32,8 @@
         }
       },
       "type": "string",
-      "required": true
+      "required": true,
+      "minLength": 3
     }
   }
 }

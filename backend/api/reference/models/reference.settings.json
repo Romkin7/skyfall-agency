@@ -2,8 +2,7 @@
   "kind": "collectionType",
   "collectionName": "references",
   "info": {
-    "name": "reference",
-    "description": ""
+    "name": "Reference"
   },
   "options": {
     "increments": true,
@@ -24,8 +23,8 @@
       },
       "type": "string",
       "required": true,
-      "unique": true,
-      "minLength": 5
+      "minLength": 3,
+      "unique": true
     },
     "slug": {
       "pluginOptions": {
@@ -57,7 +56,8 @@
           "localized": true
         }
       },
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     }
   }
 }

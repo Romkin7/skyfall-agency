@@ -1,9 +1,8 @@
 {
-  "collectionName": "components_shared_inputs",
+  "collectionName": "components_shared_inputcomponents",
   "info": {
-    "name": "inputcomponent",
-    "icon": "text-height",
-    "description": ""
+    "name": "Inputcomponent",
+    "icon": "broom"
   },
   "options": {},
   "attributes": {
@@ -17,8 +16,8 @@
         "number",
         "email"
       ],
-      "default": "text",
-      "required": true
+      "required": true,
+      "default": "text"
     },
     "inputlabel": {
       "type": "string",
@@ -27,8 +26,8 @@
     },
     "htmlfor": {
       "type": "string",
-      "required": true,
-      "minLength": 2
+      "minLength": 2,
+      "required": true
     },
     "required": {
       "type": "boolean",

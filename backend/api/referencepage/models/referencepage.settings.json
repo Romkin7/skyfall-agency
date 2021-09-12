@@ -2,7 +2,7 @@
   "kind": "singleType",
   "collectionName": "referencepages",
   "info": {
-    "name": "referencepage"
+    "name": "Referencepage"
   },
   "options": {
     "increments": true,
@@ -15,17 +15,6 @@
     }
   },
   "attributes": {
-    "Hero": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "sections.hero",
-      "required": true
-    },
     "Seo": {
       "type": "component",
       "repeatable": false,
@@ -35,6 +24,17 @@
         }
       },
       "component": "shared.seo",
+      "required": true
+    },
+    "Hero": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "sections.hero",
       "required": true
     }
   }

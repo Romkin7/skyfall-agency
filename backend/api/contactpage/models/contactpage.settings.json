@@ -2,8 +2,7 @@
   "kind": "singleType",
   "collectionName": "contactpages",
   "info": {
-    "name": "contactpage",
-    "description": ""
+    "name": "Contactpage"
   },
   "options": {
     "increments": true,
@@ -16,6 +15,17 @@
     }
   },
   "attributes": {
+    "title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "minLength": 3
+    },
     "Seo": {
       "type": "component",
       "repeatable": false,
@@ -24,15 +34,7 @@
           "localized": true
         }
       },
-      "component": "shared.seo"
-    },
-    "title": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string",
+      "component": "shared.seo",
       "required": true
     },
     "Hero": {
@@ -43,7 +45,8 @@
           "localized": true
         }
       },
-      "component": "sections.hero"
+      "component": "sections.hero",
+      "required": true
     },
     "Contactinfo": {
       "type": "component",

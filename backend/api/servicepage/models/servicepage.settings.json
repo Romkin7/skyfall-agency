@@ -2,8 +2,7 @@
   "kind": "singleType",
   "collectionName": "servicepages",
   "info": {
-    "name": "Servicepage",
-    "description": ""
+    "name": "Servicepage"
   },
   "options": {
     "increments": true,
@@ -16,15 +15,15 @@
     }
   },
   "attributes": {
-    "Hero": {
-      "type": "component",
-      "repeatable": false,
+    "pricetitle": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "component": "sections.hero"
+      "type": "string",
+      "minLength": 3,
+      "required": true
     },
     "title": {
       "pluginOptions": {
@@ -32,12 +31,13 @@
           "localized": true
         }
       },
-      "type": "text",
+      "type": "string",
+      "minLength": 3,
       "required": true
     },
     "Seo": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -46,13 +46,15 @@
       "component": "shared.seo",
       "required": true
     },
-    "pricetitle": {
+    "Hero": {
+      "type": "component",
+      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "string",
+      "component": "sections.hero",
       "required": true
     }
   }

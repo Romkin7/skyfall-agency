@@ -2,8 +2,7 @@
   "collectionName": "components_shared_links",
   "info": {
     "name": "Link",
-    "icon": "ambulance",
-    "description": ""
+    "icon": "angle-double-right"
   },
   "options": {},
   "attributes": {
@@ -20,14 +19,12 @@
       "type": "enumeration",
       "enum": [
         "blank"
-      ],
-      "required": false
+      ]
     },
     "text": {
       "type": "string",
-      "private": false,
-      "required": true,
-      "minLength": 2
+      "minLength": 2,
+      "required": true
     },
     "value": {
       "type": "string",

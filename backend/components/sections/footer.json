@@ -2,23 +2,26 @@
   "collectionName": "components_sections_footers",
   "info": {
     "name": "Footer",
-    "icon": "info",
+    "icon": "equals",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "linkbutton": {
+    "Linkbutton": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.linkbutton"
+      "component": "shared.linkbutton",
+      "required": false
     },
     "address": {
       "type": "string",
-      "required": true
+      "required": true,
+      "minLength": 2
     },
     "title": {
       "type": "string",
-      "required": true
+      "required": true,
+      "minLength": 2
     },
     "subtitle": {
       "type": "string",
@@ -28,8 +31,8 @@
     "link": {
       "type": "component",
       "repeatable": true,
-      "component": "shared.link",
-      "required": true
+      "required": true,
+      "component": "shared.link"
     }
   }
 }

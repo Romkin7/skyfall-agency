@@ -37,7 +37,7 @@ const Layout = ({ children, seo }) => (
               href
               text
             }
-            linkbutton {
+            Linkbutton {
               textcontent
               href
             }
