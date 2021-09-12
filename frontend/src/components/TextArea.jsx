@@ -4,7 +4,9 @@ const TextArea = (props) => {
   const { value, required, rows, name, id, label, changeHandler } = props;
   return (
     <div className="form-group">
-      <label htmlFor={id} className="form-label">{label}</label>
+      <label htmlFor={id} className="form-label">
+        {label}
+      </label>
       <textarea
         id={id}
         name={name}

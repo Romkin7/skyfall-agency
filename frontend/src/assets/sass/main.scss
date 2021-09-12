@@ -18,6 +18,14 @@ a {
   text-decoration: none !important;
   cursor: pointer;
 }
+.checkIcon {
+  max-width: 5rem;
+  height: 5rem;
+  svg {
+    width: 5rem;
+    height: 5rem;
+  }
+}
 
 #category {
   font-family: Staatliches !important;

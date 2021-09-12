@@ -16,7 +16,7 @@ exports.ssrComponents = {
   "component---cache-dev-404-page-js": preferDefault(__webpack_require__(/*! ./.cache/dev-404-page.js */ "./.cache/dev-404-page.js")),
   "component---src-pages-404-js": preferDefault(__webpack_require__(/*! ./src/pages/404.js */ "./src/pages/404.js")),
   "component---src-pages-index-js": preferDefault(__webpack_require__(/*! ./src/pages/index.js */ "./src/pages/index.js")),
-  "component---src-pages-tyopaikat-js": preferDefault(__webpack_require__(/*! ./src/pages/tyopaikat.js */ "./src/pages/tyopaikat.js"))
+  "component---src-pages-yhteystiedot-js": preferDefault(__webpack_require__(/*! ./src/pages/yhteystiedot.js */ "./src/pages/yhteystiedot.js"))
   }
 
 
@@ -5234,6 +5234,62 @@ exports.onRenderBody = onRenderBody;
 
 /***/ }),
 
+/***/ "./src/components/Button.jsx":
+/*!***********************************!*\
+  !*** ./src/components/Button.jsx ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var gatsby__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gatsby */ "./.cache/gatsby-browser-entry.js");
+/* harmony import */ var _Icons_ArrowIcon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Icons/ArrowIcon */ "./src/components/Icons/ArrowIcon.jsx");
+/* harmony import */ var _Icons_LoadingIcon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Icons/LoadingIcon */ "./src/components/Icons/LoadingIcon.jsx");
+
+
+
+
+
+const Button = ({
+  type,
+  size,
+  children,
+  disabled,
+  link,
+  href,
+  loading,
+  clickHandler
+}) => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "form-group mt-3"
+  }, link ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__.Link, {
+    to: href,
+    className: `button button--${size}`
+  }, children, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Icons_ArrowIcon__WEBPACK_IMPORTED_MODULE_2__["default"], null)) : loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    type: type,
+    disabled: disabled,
+    className: `button button--${size}`
+  }, children, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Icons_LoadingIcon__WEBPACK_IMPORTED_MODULE_3__["default"], null)) : type === "submit" ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    type: type,
+    disabled: disabled,
+    className: `button button--${size}`
+  }, children, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Icons_ArrowIcon__WEBPACK_IMPORTED_MODULE_2__["default"], null)) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    type: type,
+    disabled: disabled,
+    className: `button button--${size}`,
+    onClick: clickHandler
+  }, children, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Icons_ArrowIcon__WEBPACK_IMPORTED_MODULE_2__["default"], null)));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Button);
+
+/***/ }),
+
 /***/ "./src/components/Footer.jsx":
 /*!***********************************!*\
   !*** ./src/components/Footer.jsx ***!
@@ -5282,6 +5338,134 @@ const Footer = ({
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Footer);
+
+/***/ }),
+
+/***/ "./src/components/Form.jsx":
+/*!*********************************!*\
+  !*** ./src/components/Form.jsx ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils_resetUtil__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/resetUtil */ "./src/utils/resetUtil.js");
+/* harmony import */ var _Input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Input */ "./src/components/Input.jsx");
+/* harmony import */ var _Select__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Select */ "./src/components/Select.jsx");
+/* harmony import */ var _TextArea__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./TextArea */ "./src/components/TextArea.jsx");
+/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Button */ "./src/components/Button.jsx");
+/* harmony import */ var _ResponseMessage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ResponseMessage */ "./src/components/ResponseMessage.jsx");
+
+
+
+
+
+
+
+
+const Form = ({
+  formData,
+  services
+}) => {
+  const {
+    0: formState,
+    1: setFormState
+  } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(() => (0,_utils_resetUtil__WEBPACK_IMPORTED_MODULE_1__.resetFormState)());
+  const {
+    0: successMessage,
+    1: setSuccessMessage
+  } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(() => false);
+  console.log(formState);
+
+  const handleSubmit = async event => {
+    event.preventDefault();
+    await fetch(({}).API_URL + "/contacts", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formState)
+    });
+    setFormState(() => (0,_utils_resetUtil__WEBPACK_IMPORTED_MODULE_1__.resetFormState)());
+    setSuccessMessage(() => true);
+  };
+
+  const changeHandler = event => {
+    setFormState(() => {
+      return { ...formState,
+        [event.target.name]: event.target.value
+      };
+    });
+  };
+
+  const handleClick = () => {
+    setSuccessMessage(false);
+  };
+
+  const setInput = (inputtype, input) => {
+    switch (inputtype) {
+      case "text":
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          type: inputtype,
+          name: input.htmlfor,
+          label: input.inputlabel,
+          changeHandler: changeHandler,
+          required: input.required
+        });
+
+      case "email":
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          type: inputtype,
+          name: input.htmlfor,
+          label: input.inputlabel,
+          changeHandler: changeHandler,
+          required: input.required
+        });
+
+      case "select":
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Select__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          name: input.htmlfor,
+          label: input.inputlabel,
+          services: services.values,
+          changeHandler: changeHandler,
+          required: input.required
+        });
+
+      case "textarea":
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_TextArea__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          name: input.htmlfor,
+          label: input.inputlabel,
+          changeHandler: changeHandler,
+          required: input.required
+        });
+
+      default:
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "error");
+    }
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, successMessage ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ResponseMessage__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    message: "Kiitos yhteydenotostanne, vastaamme teille mahdollisimman pian!",
+    handleClick: handleClick
+  }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("form", {
+    className: "form",
+    onSubmit: event => handleSubmit(event)
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "* T\xE4hdell\xE4 merkityt kent\xE4t ovat pakollisia."), formData.Inputcomponent.map(input => {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+      key: input.id
+    }, setInput(input.inputtype, input));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Button__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    type: formData.Button[0].type
+  }, formData.Button[0].text)));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Form);
 
 /***/ }),
 
@@ -5376,6 +5560,142 @@ const Icon = ({
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Icon);
+
+/***/ }),
+
+/***/ "./src/components/Icons/ArrowIcon.jsx":
+/*!********************************************!*\
+  !*** ./src/components/Icons/ArrowIcon.jsx ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const ArrowIcon = () => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
+    fill: "currentColor",
+    className: "bi bi-arrow-right",
+    viewBox: "0 0 16 16"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
+    fillRule: "evenodd",
+    d: "M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+  }));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ArrowIcon);
+
+/***/ }),
+
+/***/ "./src/components/Icons/CheckIcon.jsx":
+/*!********************************************!*\
+  !*** ./src/components/Icons/CheckIcon.jsx ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const CheckIcon = () => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
+    fill: "#228C22",
+    className: "bi bi-check-lg responseMessage--header__icon",
+    viewBox: "0 0 16 16"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
+    d: "M13.485 1.431a1.473 1.473 0 0 1 2.104 2.062l-7.84 9.801a1.473 1.473 0 0 1-2.12.04L.431 8.138a1.473 1.473 0 0 1 2.084-2.083l4.111 4.112 6.82-8.69a.486.486 0 0 1 .04-.045z"
+  }));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CheckIcon);
+
+/***/ }),
+
+/***/ "./src/components/Icons/LoadingIcon.jsx":
+/*!**********************************************!*\
+  !*** ./src/components/Icons/LoadingIcon.jsx ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const LoadingIcon = () => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
+    fill: "currentColor",
+    className: "bi bi-arrow-repeat button--bi-arrow-repeat",
+    viewBox: "0 0 16 16"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
+    d: "M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
+    fillRule: "evenodd",
+    d: "M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"
+  }));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (LoadingIcon);
+
+/***/ }),
+
+/***/ "./src/components/Input.jsx":
+/*!**********************************!*\
+  !*** ./src/components/Input.jsx ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const Input = ({
+  type,
+  label,
+  required,
+  disabled,
+  name,
+  changeHandler,
+  value
+}) => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    htmlFor: name,
+    className: "form-label"
+  }, label), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    id: name,
+    type: type,
+    name: name,
+    className: "input form-control",
+    onInput: event => changeHandler(event),
+    value: value,
+    required: required,
+    disabled: disabled
+  }));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Input);
 
 /***/ }),
 
@@ -5629,10 +5949,51 @@ const Nav = () => {
 
 /***/ }),
 
-/***/ "./src/components/Position.jsx":
-/*!*************************************!*\
-  !*** ./src/components/Position.jsx ***!
-  \*************************************/
+/***/ "./src/components/ResponseMessage.jsx":
+/*!********************************************!*\
+  !*** ./src/components/ResponseMessage.jsx ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Button */ "./src/components/Button.jsx");
+/* harmony import */ var _Icons_CheckIcon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Icons/CheckIcon */ "./src/components/Icons/CheckIcon.jsx");
+
+
+
+
+const ResponseMessage = ({
+  message,
+  handleClick
+}) => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "col-12 col-md-12"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "checkIcon"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Icons_CheckIcon__WEBPACK_IMPORTED_MODULE_2__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, "Thank you for contacting us!")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, message), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    buttonText: "Close",
+    type: "button",
+    size: "lg",
+    clickHandler: handleClick
+  }));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ResponseMessage);
+
+/***/ }),
+
+/***/ "./src/components/Select.jsx":
+/*!***********************************!*\
+  !*** ./src/components/Select.jsx ***!
+  \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -5644,24 +6005,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 
-const Position = ({
-  position
+const Select = ({
+  label,
+  htmlFor,
+  services,
+  required = true,
+  handleChange,
+  service
 }) => {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "row d-flex my-5"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "col-12 col-md-5"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, position.title)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "col-12 col-md-7"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "position",
-    dangerouslySetInnerHTML: {
-      __html: position.description
-    }
+    className: "form-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    htmlFor: htmlFor,
+    className: "form-label"
+  }, label), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("select", {
+    id: "subject",
+    required: required,
+    name: "subject",
+    onChange: handleChange,
+    className: "form-select",
+    "aria-label": "Default select example"
+  }, service && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
+    value: service
+  }, service), services.length && services.map(serviceInMap => {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
+      key: serviceInMap.id,
+      value: serviceInMap.value
+    }, serviceInMap.text);
   })));
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Position);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Select);
 
 /***/ }),
 
@@ -5730,7 +6104,7 @@ const SEO = ({
     }
 
     if (fullSeo.shareImage) {
-      const imageUrl = (({}).GATSBY_ROOT_URL || "http://localhost:8000") + fullSeo.shareImage.localFile;
+      const imageUrl = ("http://localhost:8000" || 0) + fullSeo.shareImage.localFile;
       tags.push({
         name: "image",
         content: imageUrl
@@ -5834,6 +6208,51 @@ const SocilaLinks = ({
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SocilaLinks);
+
+/***/ }),
+
+/***/ "./src/components/TextArea.jsx":
+/*!*************************************!*\
+  !*** ./src/components/TextArea.jsx ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const TextArea = props => {
+  const {
+    value,
+    required,
+    rows,
+    name,
+    id,
+    label,
+    changeHandler
+  } = props;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    htmlFor: id,
+    className: "form-label"
+  }, label), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("textarea", {
+    id: id,
+    name: name,
+    rows: rows || 4,
+    required: required,
+    className: "textArea form-control",
+    onChange: event => changeHandler(event),
+    value: value
+  }));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TextArea);
 
 /***/ }),
 
@@ -5951,7 +6370,7 @@ const SEO = ({
     }
 
     if (fullSeo.shareImage) {
-      const imageUrl = (({}).GATSBY_ROOT_URL || "http://localhost:8000") + fullSeo.shareImage.localFile;
+      const imageUrl = ("http://localhost:8000" || 0) + fullSeo.shareImage.localFile;
       tags.push({
         name: "image",
         content: imageUrl
@@ -6108,10 +6527,10 @@ const query = "3012998877";
 
 /***/ }),
 
-/***/ "./src/pages/tyopaikat.js":
-/*!********************************!*\
-  !*** ./src/pages/tyopaikat.js ***!
-  \********************************/
+/***/ "./src/pages/yhteystiedot.js":
+/*!***********************************!*\
+  !*** ./src/pages/yhteystiedot.js ***!
+  \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -6119,14 +6538,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _public_page_data_sq_d_3901743628_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../public/page-data/sq/d/3901743628.json */ "./public/page-data/sq/d/3901743628.json");
+/* harmony import */ var _public_page_data_sq_d_389437503_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../public/page-data/sq/d/389437503.json */ "./public/page-data/sq/d/389437503.json");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Layout */ "./src/components/Layout.jsx");
-/* harmony import */ var _components_Hero__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Hero */ "./src/components/Hero.jsx");
-/* harmony import */ var _components_Position__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Position */ "./src/components/Position.jsx");
-/* harmony import */ var _assets_sass_main_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../assets/sass/main.scss */ "./src/assets/sass/main.scss");
-/* harmony import */ var _assets_sass_main_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_assets_sass_main_scss__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _components_List__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/List */ "./src/components/List.jsx");
+/* harmony import */ var _components_Form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Form */ "./src/components/Form.jsx");
+/* harmony import */ var _components_Hero__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Hero */ "./src/components/Hero.jsx");
+/* harmony import */ var _assets_sass_main_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../assets/sass/main.scss */ "./src/assets/sass/main.scss");
+/* harmony import */ var _assets_sass_main_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_assets_sass_main_scss__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _components_SocialLinks__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/SocialLinks */ "./src/components/SocialLinks.jsx");
 
 
 
@@ -6134,33 +6555,65 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const EmployeePage = () => {
-  const data = _public_page_data_sq_d_3901743628_json__WEBPACK_IMPORTED_MODULE_0__.data;
+
+
+const ContactPage = () => {
+  const data = _public_page_data_sq_d_389437503_json__WEBPACK_IMPORTED_MODULE_0__.data;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    seo: data.strapiEmployeepage.Seo
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_Hero__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    background: data.strapiEmployeepage.Hero.background,
-    content: data.strapiEmployeepage.Hero.content,
-    title: data.strapiEmployeepage.Hero.title,
+    seo: data.strapiContactpage.Seo
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_Hero__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    background: data.strapiContactpage.Hero.background,
+    title: data.strapiContactpage.Hero.title,
+    content: data.strapiContactpage.Hero.content,
+    link: data.strapiContactpage.Hero.link,
     color: "black"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("section", {
-    className: "positions my-5"
+    className: "services my-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
     className: "container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
     className: "row d-flex justify-content-center"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
-    className: "col-12"
-  }, data.allStrapiPosition.edges.map(postion => {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_Position__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      key: postion.node.id,
-      position: postion.node
-    });
+    className: "col-5"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("h2", null, data.strapiContactpage.Contactinfo.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_List__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    listItemData: data.strapiContactpage.Contactinfo
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_SocialLinks__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    socialLinks: data.allStrapiSociallink.edges,
+    side: "start"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
+    className: "col-7"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_Form__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    formData: data.strapiContactpage.Contactform,
+    services: data.strapiContactpage.Contactform.services
   }))))));
 };
 
-const query = "3901743628";
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (EmployeePage);
+const query = "389437503";
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ContactPage);
+
+/***/ }),
+
+/***/ "./src/utils/resetUtil.js":
+/*!********************************!*\
+  !*** ./src/utils/resetUtil.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "resetFormState": () => (/* binding */ resetFormState)
+/* harmony export */ });
+const resetFormState = () => {
+  return {
+    firstname: "",
+    lastname: "",
+    email: "",
+    message: "",
+    service: "verkkokauppa",
+    company: ""
+  };
+};
 
 /***/ }),
 
@@ -15860,14 +16313,14 @@ module.exports = JSON.parse('{"data":{"strapiHomepage":{"Seo":{"metaTitle":"Digi
 
 /***/ }),
 
-/***/ "./public/page-data/sq/d/3901743628.json":
-/*!***********************************************!*\
-  !*** ./public/page-data/sq/d/3901743628.json ***!
-  \***********************************************/
+/***/ "./public/page-data/sq/d/389437503.json":
+/*!**********************************************!*\
+  !*** ./public/page-data/sq/d/389437503.json ***!
+  \**********************************************/
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"data":{"strapiEmployeepage":{"Hero":{"title":"Kevytyrittäjä, työtön, freelancer, yrittäjä, jätä CV","content":"<p>Meille kannattaa jättää oma CV ja tuntihinnan, sillä me jatkuvasti etsimme työmahdollisuuksia teille ja myös hyviä osaajia.\\n\\nAlempana eniten kysytyt tehtävät:</p>","background":"https://skyfall-agency-images.s3.eu-central-1.amazonaws.com/white_background_new_9a42cf823d.jpg"},"Seo":{"metaTitle":"Kevytyrittäjä, työtön, freelancer, yrittäjä, jätä CV","metaDescription":"Meille kannattaa jättää oma CV ja tuntihinnan, sillä me jatkuvasti etsimme työmahdollisuuksia teille ja myös hyviä osaajia."}},"allStrapiPosition":{"edges":[{"node":{"strapiId":1,"slug":"ux-ui-ohjelmistokehittaejaeae","title":"UX/UI ohjelmistokehittäjää","description":"<p>Skyfall Agency on nuori digitoimisto, joka on aloittanut toimintansa 2020 ja jonka pääyhtiö on Phoenix General Oy.</p>\\n\\n<p>Skyfall Agency on moderni kansainvälinen digitalo, joka tarjoaa laajan skaalan ratkaisuja: WordPress ja muiden alustojen, sekä oman alustan verkkosivut, verkkokaupat, mobiili ja verkkosovellukset, ohjelmistot, tietokannat, automatisoidut työkalut, graafista designia, palvelumuotoilua, brändin suunnittelua, viestintää ja sisällöntuotantoa.</p>\\n\\n<p>Skyfall Agency toteuttaa digitaalisen transformaation hankkeita, ja on osaava kansainvälistämisen ja kasvun konsulttiyhtiö. Kaikki meidän IT ja digihankkeet tehdään liiketoiminnallisesta ja toiminnallisesta näkökulmasta.</p>\\n\\n<p>Nyt haetaan jatkuvasti software development UX/UI</p>\\n\\n<p><em>Tehtävät:</em></p>\\n\\n<p>Software Development/ Ohjelmistokehittäjä: UX/UI</p>\\n\\n<p><em>Vaatimukset:</em></p>\\n\\n<ul>\\n<li>Kokemus UX/UI suunnittelusta vähintään 5 vuoden kokemusta</li>\\n\\n<li>Kokemus web-applikaatioiden suunnittelusta, vähintään 2 vuoden kokemusta</li>\\n</ul>\\n\\n<p><em>Kielitaito:</em> suomi äidinkieli, muut kielet plussa</p>\\n\\n<p><em>Aloitus:</em> kun löydetään sopiva henkilö</p>\\n\\n<p>Hakemukset: <a href=\\"mailto:ivan@phornix-general.com\\">ivan@phoenix-general.com</a></p>"}},{"node":{"strapiId":2,"slug":"frontend-developer","title":"Frontend developer","description":"<p>Skyfall Agency on nuori digitoimisto, joka on aloittanut toimintansa 2020 ja jonka pääyhtiö on Phoenix General Oy.</p>\\n\\n<p>Skyfall Agency on moderni kansainvälinen digitalo, joka tarjoaa laajan skaalan ratkaisuja: WordPress ja muiden alustojen, sekä oman alustan verkkosivut, verkkokaupat, mobiili ja verkkosovellukset, ohjelmistot, tietokannat, automatisoidut työkalut, graafista designia, palvelumuotoilua, brändin suunnittelua, viestintää ja sisällöntuotantoa.</p>\\n\\n<p>Skyfall Agency toteuttaa digitaalisen transformaation hankkeita, ja on osaava kansainvälistämisen ja kasvun konsulttiyhtiö. Kaikki meidän IT ja digihankkeet tehdään liiketoiminnallisesta ja toiminnallisesta näkökulmasta.</p>\\n\\n<p>Nyt haetaan jatkuvasti Frontend software development osaajaa (osaajia)</p>\\n\\n<p><em>Tehtävät:</em></p>\\n\\n<p>Frontend Software Development</p>\\n\\n<p><em>Vaatimukset:</em></p>\\n\\n<ul>\\n<li>Kokemus ohjelmoinnista vähintään 5 vuotta</li>\\n\\n<li>Kokemus web-teknologioista, vähintään 2 vuotta</li>\\n\\n<li>Kokemusta React frameworkistä, vähintään vuoden</li>\\n\\n<li>Kokemusta Google Cloud Platform</li>\\n</ul>\\n\\n<p><em>Kielitaito:</em> suomi äidinkieli, muut kielet plussa</p>\\n\\n<p><em>Aloitus:</em> kun löydetään sopiva henkilö</p>\\n\\n<p>Hakemukset: <a href=\\"mailto:ivan@phoenix-general.com\\">ivan@phoenix-general.com</a></p>"}},{"node":{"strapiId":3,"slug":"projektipaeaellikkoe","title":"Projektipäällikkö","description":"<p>Skyfall Agency on nuori digitoimisto, joka on aloittanut toimintansa 2020 ja jonka pääyhtiö on Phoenix General Oy.</p>\\n\\n<p>Skyfall Agency on moderni kansainvälinen digitalo, joka tarjoaa laajan skaalan ratkaisuja: WordPress ja muiden alustojen, sekä oman alustan verkkosivut, verkkokaupat, mobiili ja verkkosovellukset, ohjelmistot, tietokannat, automatisoidut työkalut, graafista designia, palvelumuotoilua, brändin suunnittelua, viestintää ja sisällöntuotantoa.</p> \\n\\n<p>Skyfall Agency toteuttaa digitaalisen transformaation hankkeita, ja on osaava kansainvälistämisen ja kasvun konsulttiyhtiö. Kaikki meidän IT ja digihankkeet tehdään liiketoiminnallisesta ja toiminnallisesta näkökulmasta.</p>\\n\\n<p>Nyt haetaan kasvun varmistamiseksi aluksi määrä-aikaista ja myöhemmin pidempi-aikaista Myyjää/ Projektipäällikköä.</p>\\n\\n<p><em>Tehtävät:</em></p>\\n\\n<p>Asiakashankinta ja projektien johtaminen</p>\\n\\n<p><em>Vaatimukset:</em></p>\\n\\n<p>Voit olla harjoittelija, konsultti/ kevytyrittäjä tai osa-aikainen työntekijä. Sinulla pitää olla mielellään osaamista tai ymmärrystä IT projekteista, myynnistä tai asiakashankinnasta, asiakaspalvelusta tai liiketoiminnan kehittämisestä. Kokemusta WordPress tai vastaavista alustoista on hyödyksi. Kokemusta ohjelmoinnista tai viestinnästä tai palvelumuotoilusta, tai graafisesta suunnittelusta - plussa.</p>\\n\\n<p><em>Kielitaito:</em> suomi äidinkieli, muut kielet plussa</p>\\n\\n<p><em>Aloitus:</em> kun löydetään sopiva henkilö</p>\\n\\n<p>Hakemukset: <a href=\\"mailto:ivan@phoenix-general.com\\">ivan@phoenix-general.com</a></p> "}}]}}}');
+module.exports = JSON.parse('{"data":{"allStrapiSociallink":{"edges":[{"node":{"href":"https://www.facebook.com/Skyfall-Agency-103541184943610","iconname":"facebook"}},{"node":{"href":"https://www.linkedin.com/company/skyfall-agency/","iconname":"linkedin"}}]},"strapiContactpage":{"Hero":{"title":"Ota yteyttä","background":"https://skyfall-agency-images.s3.eu-central-1.amazonaws.com/white_background_new_9a42cf823d.jpg","content":"<p>Varaa aikaa, 30 min. ilmaiseksi/ Book time, 30 min. for free.</p>","link":{"href":"/palvelut","id":1,"textcontent":"Tutustu palveluihimme"}},"Contactinfo":{"title":"Yhteystiedot","subtitle":"Myynti/ Asiakaspalvelu","address":"Käyntiosoite: Valimotie 13 A, 00380, Helsinki, Finland","link":[{"id":1,"href":"tel","text":"phone: +358 40 846 56 58","value":"tel:+358408465658"},{"id":2,"href":"mailto","text":"email: skyfall@skyfall.agency","value":"mailto:skyfall@skyfall.agency"}]},"Contactform":{"services":{"values":[{"id":1,"value":"verkkokauppa","text":"Verkkokauppa"},{"id":2,"value":"verkkosivut","text":"Verkkosivut"},{"id":3,"value":"digitaalisen-transformaation-kehityshanke","text":"Digitaalisen transformaation kehityshanke"},{"id":4,"value":"graafinen-suunnittelu-ja-yritysilme","text":"Graafinen suunnittelu ja yritysilme"},{"id":5,"value":"saas-ohjelmist- ratkaisu","text":"SaaS ohjelmisto ratkaisu"},{"id":6,"value":"sähköpostimarkkinointi-suunnittelu-ja-toteutus","text":"Sähköpostimarkkinointi - suunnittelu ja toteutus"},{"id":7,"value":"some-ja-media-näkyvyys","text":"SOME ja media näkyvyys"},{"id":8,"value":"sisällöntuotanto-ja-viestintä-palvelut","text":"Sisällöntuotanto ja viestintä palvelut"},{"id":9,"value":"liikejuridiikka","text":"Liikejuridiikka"},{"id":10,"value":"muu-asia","text":"Muu asia"}]},"Inputcomponent":[{"id":1,"inputtype":"text","inputlabel":"Etunimi","htmlfor":"firstname","required":true,"disabled":false,"readonly":false,"name":"firstname"},{"id":2,"inputtype":"text","inputlabel":"Sukunimi","htmlfor":"lastname","required":true,"disabled":false,"readonly":false,"name":"lastname"},{"id":3,"inputtype":"text","inputlabel":"Yritys","htmlfor":"company","required":true,"disabled":false,"readonly":false,"name":"company"},{"id":4,"inputtype":"email","inputlabel":"Email","htmlfor":"email","required":true,"disabled":false,"readonly":false,"name":"email"},{"id":5,"inputtype":"select","inputlabel":"Olen kiinnostunut","htmlfor":"service","required":true,"disabled":false,"readonly":false,"name":"service"},{"id":6,"inputtype":"textarea","inputlabel":"Viesti","htmlfor":"message","required":true,"disabled":false,"readonly":false,"name":"message"}],"Button":[{"id":1,"text":"Lähetä","type":"submit","disabled":false}]},"Seo":{"metaTitle":"Skyfall Yhteystiedot","metaDescription":"Skyfall yhteystiedot, Varaa konsultaatio-aikaa. Book a Consultation, Varaa aikaa Calendlyssä 30 min. ilmaiseksi/ Book the Calendly time 30 min. for free"}}}}');
 
 /***/ }),
 

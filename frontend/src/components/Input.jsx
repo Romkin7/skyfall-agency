@@ -11,13 +11,15 @@ const Input = ({
 }) => {
   return (
     <div className="form-group">
-      <label htmlFor={name} className="form-label">{label}</label>
+      <label htmlFor={name} className="form-label">
+        {label}
+      </label>
       <input
         id={name}
         type={type}
         name={name}
         className="input form-control"
-        onChange={(event) => changeHandler(event)}
+        onInput={(event) => changeHandler(event)}
         value={value}
         required={required}
         disabled={disabled}
