@@ -2,7 +2,7 @@
   position: fixed;
   width: 100%;
   z-index: 20;
-  padding: 1rem 3rem;
+  padding: 1rem 0;
   &--transparent {
     background-color: transparent !important;
   }
@@ -15,6 +15,33 @@
       color: $white !important;
     }
   }
+  &--toggle {
+    line-height: 1.25rem;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    &--black {
+      color: $black !important;
+    }
+    &--white {
+      color: $white !important;
+    }
+    &--icon {
+      color: inherit;
+      width: 1.5rem;
+      height: 1.5rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &--collapse {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 0.5rem;
+  }
   &--link {
     color: $white !important;
     &--black {
@@ -25,6 +52,21 @@
     }
     &--active {
       border-bottom: 2px solid $black;
+    }
+  }
+  @media screen and (min-width: 992px) {
+    padding: 1rem 3rem;
+    &--collapse {
+      padding: 0;
+      margin-top: 0;
+      background-color: transparent;
+      &--menu {
+        width: 100%;
+        justify-content: flex-end;
+        .nav--link {
+          color: inherit;
+        }
+      }
     }
   }
 }

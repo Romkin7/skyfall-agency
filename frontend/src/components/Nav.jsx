@@ -4,7 +4,8 @@ import { Link, StaticQuery, graphql } from "gatsby";
 const Nav = () => {
   const [active, setActive] = useState(() => 0);
   const [color, setColor] = useState(() => "black");
-  const [bacground, setBackground] = useState(false);
+  const [bacground, setBackground] = useState(() => false);
+  const [open, setOpen] = useState(() => false);
 
   useEffect(() => {
     if (typeof window !== "undefined" && !active) {
@@ -69,7 +70,11 @@ const Nav = () => {
             className={`navbar navbar-expand-lg navbar-dark ${
               bacground && color === "black"
                 ? "bg-light"
+                : open && color === "black"
+                ? "bg-light"
                 : bacground && color === "white"
+                ? "bg-dark"
+                : open && color === "white"
                 ? "bg-dark"
                 : "nav--transparent"
             } nav`}
@@ -83,7 +88,8 @@ const Nav = () => {
                 {data.strapiGlobal.siteName}
               </Link>
               <button
-                className="navbar-toggler"
+                onClick={() => setOpen(!open)}
+                className={"navbar-toggler nav--toggle nav--toggle--" + color}
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent"
@@ -91,15 +97,24 @@ const Nav = () => {
                 aria-expanded="false"
                 aria-label="Toggle navigation"
               >
-                <span className="navbar-toggler-icon"></span>
-                Menu
+                <svg
+                  fill={color}
+                  className="bi bi-list nav--toggle--icon"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+                  />
+                </svg>
+                <span>Menu</span>
               </button>
             </div>
             <div
-              className="collapse navbar-collapse"
+              className="collapse navbar-collapse nav--collapse"
               id="navbarSupportedContent"
             >
-              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <ul className="navbar-nav me-auto mb-2 mb-lg-0 nav--collapse--menu">
                 {data.allStrapiNavitem.edges.map((navItem) => {
                   return (
                     <li key={navItem.node.strapiId} className="nav-item">
