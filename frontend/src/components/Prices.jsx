@@ -8,7 +8,7 @@ const Prices = ({ prices }) => {
         return (
           <div
             key={`price__right__${price.node.slug}`}
-            className="col-6 col-sm-6 col-md-4"
+            className="col-12 col-sm-6 col-md-4"
           >
             <PriceCard price={price} />
           </div>
