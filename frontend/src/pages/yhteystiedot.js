@@ -22,7 +22,7 @@ const ContactPage = () => {
       <section className="services my-5">
         <div className="container">
           <div className="row d-flex justify-content-center">
-            <div className="col-5">
+            <div className="col-12 col-md-5">
               <h2>{data.strapiContactpage.Contactinfo.title}</h2>
               <List listItemData={data.strapiContactpage.Contactinfo} />
               <SocilaLinks
@@ -30,7 +30,7 @@ const ContactPage = () => {
                 side="start"
               />
             </div>
-            <div className="col-7">
+            <div className="col-12 col-md-7">
               <Form
                 formData={data.strapiContactpage.Contactform}
                 services={data.strapiContactpage.Contactform.services}
