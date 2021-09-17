@@ -20,6 +20,16 @@ const Footer = ({ footer, socialLinks }) => {
             </div>
           </div>
         </div>
+        <div className="row">
+          <p>
+            Skyfall Agency ©2021. All Rights Reserved.
+            <br /> Made with &#10084; by{" "}
+            <a className="pinkLink" href="https://devdesign.fi">
+              DevDesign
+            </a>
+            .
+          </p>
+        </div>
       </div>
     </footer>
   );
